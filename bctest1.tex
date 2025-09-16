@@ -1,0 +1,234 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{textcomp}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{gensymb}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{nicefrac}
+\hypersetup{
+    colorlinks=true,        % Enable colored links
+    linkcolor=teal,         % Set color for internal links
+    citecolor=teal,         % Set color for citations
+    filecolor=teal,         % Set color for file links
+    urlcolor=teal           % Set color for URLs
+}
+
+\newcommand{\example}[1]{\textcolor{blue}{\textbf{Example:} #1}}
+\newcommand{\step}[2]{\textcolor{blue}{\textbf{Step #1:} #2}}
+
+\begin{document}
+
+\begin{center}
+\textbf{{\Large AP Calculus BC Test 1}}
+\end{center}
+
+\subsection*{H1 Rates of change}
+
+The \textbf{average rate of change} (also AROC, slope of the secant line) of a function $f$ over the interval $[a, b]$ is given by:
+
+\[\frac{f(b) - f(a)}{b - a}\]
+
+The \textbf{instantaneous rate of change} (also IROC, slope of the tangent line) of a function $f$ at a point $x = c$ is given by the derivative:
+
+\[f'(c) = \lim_{h \to 0} \frac{f(c + h) - f(c)}{h}\]
+
+This is also known as the \textbf{difference quotient} or the \textbf{limit definition of the derivative.}
+
+\example{A tangent line to the graph $f(x)$ at the point $x = a$ uses the instantaneous rate of change for the slope. Write the equation of the tangent line to $f(x) = -x^2+5$ and then use the tangent line to approximate $f(5.1)$.}
+
+\step{1}{Find the derivative by the power rule.}
+
+\begin{gather*}
+f(x) = -x^2+5 \\
+f'(x) = -2x
+\end{gather*}
+
+\step{2}{Find the equation of the tangent line at x = 5.}
+
+\begin{gather*}
+f'(5) = -10 \\
+f(5) = -5^2 + 5 = -20 \\
+y+20 = -10(x-5) \\
+y = -10x + 50 - 20 \\
+y = -10x + 30
+\end{gather*}
+
+\step{3}{Find $f(5.1)$ using the tangent line.}
+
+\begin{gather*}
+f(5.1) \approx -10(5.1) + 30 \\ 
+= -51 + 30 \\
+= \boxed{-21}
+\end{gather*}
+
+\subsection*{H2 Limits and continuity}
+
+The \textbf{limit} of a function is the y-value the graph approaches. Limit values are not affected by holes, random points, or sharp turns. However, there are some conditions for a limit to exist:
+
+\begin{enumerate}
+\item \textbf{The limit from the left must equal the limit from the right.} In math terms:
+\[\lim_{x \to c^-} f(x) = \lim_{x \to c^+} f(x)\]
+If the limit from the left does not equal the limit from the right, then the limit does not exist (DNE). \textit{If the limit from the left equals the limit from the right and the value of the function equals the value of the limit, then the function is \textbf{continuous} at the given point.}
+\item \textbf{The limit must approach a finite value.} If the limit approaches infinity, then the limit does not exist (DNE). However, if the limit approaches $\infty$ or $-\infty$ from both the left and the right, the limit can be considered to exist as either $\infty$ or $-\infty$.
+\end{enumerate}
+
+There are different \textbf{types of discontinuities} to consider:
+
+\paragraph{Removable} Removable discontinuities can be ``removed'' when the function is defined at the point of discontinuity. This is represented by a hole in the graph. The limit exists at the hole.
+
+\paragraph{Non-removable jump} Jump discontinuities occur when the limit from the left does not equal the limit from the right and both limits approach finite values. This is represented by a jump in the graph. The limit does not exist at the jump.
+
+\paragraph{Asymptotic} Asymptotic discontinuities occur when the limit from the left or right approaches $\infty$ or $-\infty$. This is represented by a vertical asymptote in the graph. The limit does not exist at the asymptote or can be regarded as $\infty$ or $-\infty$ if the asymptote is an even asymptote.
+
+\paragraph{Oscillating} Oscillating discontinuities occur when the function oscillates between two values as it approaches a point. This is represented by a wavy line in the graph that goes up and down indefinitely. The limit does not exist at the oscillation.
+
+\example{In the graph of $\displaystyle f(x) = \frac{x+3}{x^2-9}$, at what $x$-values do removable discontinuities occur? Asymptotic discontinuities? What is the limit ($y$-value) as $x$ approaches the removable discontinuity?}
+
+\step{1}{Factor the function and cross out the common factors.}
+
+\begin{gather*}
+f(x) = \frac{x+3}{(x-3)(x+3)} \\
+f(x) = \frac{1}{x-3}, x \neq -3
+\end{gather*}
+
+The removable discontinuity occurs at $ x = -3 $.
+
+\step{2}{Find the limit as $x$ approaches the removable discontinuity.}
+
+\begin{gather*}
+\lim_{x \to -3} f(x)
+= \lim_{x \to -3} \frac{1}{x-3} \\
+= \frac{1}{-3-3} \\
+= \boxed{-\frac{1}{6}}
+\end{gather*}
+
+\step{3}{Find the asymptotic discontinuity.}
+
+The asymptotic discontinuity occurs at $ x = 3 $ because $x$ cannot equal 3 under an y circumstance.
+
+Check with \href{https://www.desmos.com/calculator}{Desmos}.
+
+\subsubsection*{What to do to find...}
+
+\paragraph{Limits at a point} Direct substitution or algebraic manipulation (factoring, rationalizing, etc.).
+
+\paragraph{Limits at infinity} Consider the dominant term in both the numerator and denominator, then simplify.
+
+\paragraph{Horizontal asymptotes} Find the limit as $x$ approaches $\infty$ and $-\infty$. If the limit approaches a finite value, then that value is the horizontal asymptote.
+
+\paragraph{Indeterminate forms} Use L'Hopital's rule and find the derivative of the top over the derivative of the bottom (separately, not with quotient rule). DO NOT WRITE ``$f(x) = \frac{0}{0}$''!!!! (``$\frac{0}{0}$ indeterminate form'' is fine.)
+
+\subsection*{H3 Non-traditional limits}
+
+To find non-traditional limits, apply one of the following:
+
+\begin{itemize}
+\item Evaluate the limit separately from the left and from the right and see if they match.
+\item If the limit is a composition, evaluate the limit of the inner function first, then evaluate the limit of the outer function as it approaches the limit of the inner function.
+\item If the limit is a composition and the outer function has a jump discontinuity, evaluate whether the inner function approaches the value of the jump discontinuity from the top (right, +) or from the bottom (left, -), then evaluate the outer function as a one-sided limit.
+\item If the limit is a composition and the inner function does not merely approach a value but rather stays consistently at that value, then evaluate the outer function at the value of the limit of the inner function.
+\end{itemize}
+
+\subsection*{H4 Differentiation}
+
+Refer to \href{https://www.mathsisfun.com/calculus/derivatives-rules.html}{derivative rules} for a full list.
+
+\subsection*{H5 Graphs of derivatives and derivatives of inverse (trig) functions}
+
+The point $(a, b)$ is on $f(x)$, and $(b, a)$ is on $f^{-1}(x)$, its inverse. The derivative of the inverse function is given by:
+
+\[(f^{-1})'(b) = \frac{1}{f'(a)}\]
+
+In other words, the derivative of the inverse at the y-value of a function equals the reciprocal of the derivative of the function at the x-value.
+
+\begin{gather*}
+\frac{d}{dx} (\sin^{-1} x) = \frac{1}{\sqrt{1-x^2}} \\
+\frac{d}{dx} (\cos^{-1} x) = \frac{-1}{\sqrt{1-x^2}} \\
+\frac{d}{dx} (\tan^{-1} x) = \frac{1}{1+x^2}
+\end{gather*}
+
+\href{https://english.mathe-online.at/tests/diff1/ablerkennen.html}{The big derivative puzzle}
+
+\subsection*{H6 Position, acceleration, velocity}
+
+\textbf{Velocity} is the first derivative of \textbf{position} (position is the integral of velocity) \\
+\textbf{Acceleration} is the first derivative of velocity (velocity is the integral of acceleration) \\
+Acceleration is the second derivative of position \\
+
+\textbf{Distance} vs \textbf{displacement}: Distance is the total length traveled, while displacement is the change in position (final position - initial position). To calculate total distance, find the critical points of the velocity function, then evaluate the position function at those points and add the absolute values of the differences.
+
+\subsection*{H7 Implicit differentiation}
+
+\example{Find $\frac{dy}{dx}$ if $x^2+xy+y^2 = 7$.}
+
+\step{1}{Differentiate both sides with respect to $x$.}
+
+\begin{gather*}
+\frac{d}{dx} (x^2+xy+y^2) = \frac{d}{dx} (7) \\
+2x + x \frac{dy}{dx} + y + 2y \frac{dy}{dx} = 0
+\end{gather*}
+
+\step{2}{Solve.}
+\begin{gather*}
+x \frac{dy}{dx} + 2y \frac{dy}{dx} = -2x - y \\
+\frac{dy}{dx} (x + 2y) = -2x - y \\
+\boxed{\frac{dy}{dx} = \frac{-2x - y}{x + 2y}}
+\end{gather*}
+
+\subsection*{H8 Related rates}
+
+\example{A 15-foot ladder leans against a vertical wall. The bottom is sliding away from the wall at a rate of 2 ft s$^{-1}$. Let $\theta$ be the angle between the ground and the ladder. At what rate is $\theta$ changing when the bottom of the ladder is 9 feet from the wall?}
+
+\step{1}{Draw a picture, label the variables, then list what is given and what is to be found.}
+
+\begin{itemize}
+\item Given: $\frac{dx}{dt} = 2$ ft/s, $x = 9$ ft, ladder length = 15 ft
+\item Find: $\frac{d\theta}{dt}$ when $x = 9$ ft
+\end{itemize}
+
+\step{2}{Write an equation relating the variables.}
+\[\cos \theta = \frac{x}{15}\]
+
+\step{3}{Differentiate implicitly with respect to $t$.}
+\[-\sin \theta \frac{d\theta}{dt} = \frac{1}{15} \frac{dx}{dt}\]
+
+\step{4}{Solve for $\frac{d\theta}{dt}$.}
+\[\frac{d\theta}{dt} = \frac{-1}{15 \sin \theta} \frac{dx}{dt}\]
+\step{5}{Find $\sin \theta$ when $x = 9$ ft.}
+\begin{gather*}
+\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}} \\ = \frac{\sqrt{15^2 - 9^2}}{15} \\ = \frac{12}{15} \\ = \boxed{\frac{4}{5}}
+\end{gather*}
+
+\step{6}{Substitute known values and calculate.}
+\begin{gather*}
+\frac{d\theta}{dt} = \frac{-1}{15 \cdot \frac{4}{5}} \cdot 2 \\ = \boxed{\frac{-1}{6} \text{ rad/s}}
+\end{gather*}
+
+\subsection*{H9 Extrema and concavity}
+
+\textbf{Critical points} occur when $f'(x) = 0$ or $f'(x)$ is undefined. To find critical points, find the derivative, set it equal to zero, and solve.
+
+\textbf{Absolute extrema} are the highest and lowest points on a closed interval. To find absolute extrema, evaluate the function at the critical points and at the endpoints of the interval, then compare the values.
+
+\textbf{Local extrema} are the highest and lowest points in a small neighborhood. To find local extrema, use the first or second derivative test.
+
+\textbf{First derivative test}: Find the critical points, then test values in the intervals between the critical points to see if the derivative is positive or negative. If $f'(x)$ changes from positive to negative at a critical point, then $f(x)$ has a local maximum at that point. If $f'(x)$ changes from negative to positive at a critical point, then $f(x)$ has a local minimum at that point. If $f'(x)$ does not change sign at a critical point, then $f(x)$ has no local extremum at that point.
+
+\textbf{Second derivative test}: Find the critical points, then find the second derivative. If $f''(x) > 0$ at a critical point, then $f(x)$ has a local minimum at that point. If $f''(x) < 0$ at a critical point, then $f(x)$ has a local maximum at that point. If $f''(x) = 0$ at a critical point, then the test is inconclusive.
+
+\textbf{Concavity} describes the direction the graph is curving. If $f''(x) > 0$, then the graph is concave up. If $f''(x) < 0$, then the graph is concave down. \textbf{Inflection points} occur when $f''(x) = 0$ or $f''(x)$ is undefined. 
+
+
+
+\end{document}
