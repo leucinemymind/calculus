@@ -24,6 +24,8 @@
     urlcolor=teal           % Set color for URLs
 }
 
+\DeclareMathOperator{\arcsec}{arcsec}
+
 \newcommand{\example}[1]{\textcolor{blue}{\textbf{Example:} #1}}
 \newcommand{\step}[2]{\textcolor{blue}{\textbf{Step #1:} #2}}
 
@@ -36,6 +38,22 @@
 \subsection*{H10 Linearization}
 
 Linearization is a method used to approximate the value of a function near a given point using the tangent line at that point. 
+
+\example{Approximate the cube root of 82 using linearization.}
+
+\step{1}{Identify the function and the point of tangency.}
+
+$$f(x) = \sqrt[3]{x}, \quad a = 81$$
+
+\step{2}{Find the derivative of the function.}
+
+$$f'(x) = \frac{1}{3x^{2/3}}$$
+
+\step{3}{Evaluate the function and its derivative at the point of tangency.}
+
+$$f(81) = 3, \quad f'(81) = \frac{1}{27}$$
+
+\step{4}{Write the equation of the tangent line.}
 
 \subsection*{H11 Optimization}
 
@@ -52,6 +70,34 @@ Linearization is a method used to approximate the value of a function near a giv
 \subsection*{H17 Integration by u-substitution and change of variable}
 
 \subsection*{H18 Inverse trig integration}
+
+\begin{gather*}
+\int \frac{1}{\sqrt{a^2 - x^2}} \: dx = \arcsin \left( \frac{x}{a} \right) + C \\
+\int \frac{1}{a^2 + x^2} \: dx = \frac{1}{a} \arctan \left( \frac{x}{a} \right) + C \\
+\int \frac{1}{x \sqrt{x^2 - a^2}} \: dx = \frac{1}{a} \arcsec \left( \frac{|x|}{a} \right) + C
+\end{gather*}
+
+(no need to memorize formulas - memorize forms, use $u$-substitution instead)
+
+\example{Evaluate $\displaystyle \int \frac{1}{\sqrt{16 - 9x^2}} \: dx$.}
+
+\step{1}{Reduce the constant to 1.}
+
+\begin{gather*}
+\int \frac{1}{\sqrt{16 - 9x^2}} \: dx \\
+= \int \frac{1}{16\sqrt{1 - \frac{9}{16}x^2}} \: dx \\
+= \frac{1}{16} \int \frac{1}{\sqrt{1 - \left(\frac{3}{4}x\right)^2}} \: dx
+\end{gather*}
+
+\step{2}{Use $u$-substitution with $u = \frac{3}{4}x$.}
+
+\begin{gather*}
+u = \frac{3}{4}x \\
+du = \frac{3}{4} dx \\
+\frac{4}{3} du = dx \\
+\frac{1}{16} \cdot \frac{4}{3} \int \frac{1}{\sqrt{1 - u^2}} \: du \\
+= \frac{1}{12} \int \frac{1}{\sqrt{1 - u^2}} \: du
+\end{gather*}
 
 \subsection*{H19 Long division and integration}
 
