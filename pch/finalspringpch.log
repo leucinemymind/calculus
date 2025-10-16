@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  3 SEP 2025 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  2 OCT 2025 20:49
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **finalspringpch.tex
 (./finalspringpch.tex
@@ -765,7 +764,7 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count330
 \l__pdf_internal_box=\box70
 )
-No file finalspringpch.aux.
+(./finalspringpch.aux)
 \openout1 = `finalspringpch.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -786,6 +785,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
+
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count331
@@ -843,6 +843,7 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 30.
+(./finalspringpch.out) (./finalspringpch.out)
 \@outlinefile=\write4
 \openout4 = `finalspringpch.out'.
 
@@ -863,6 +864,7 @@ LaTeX Info: Redefining \showhyphens on input line 30.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
+
 (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
@@ -924,21 +926,14 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 337--349
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-Package rerunfilecheck Warning: File `finalspringpch.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `finalspringpch.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `finalspringpch.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 33273 strings out of 473190
- 773431 string characters out of 5715801
+ 33281 strings out of 473190
+ 773607 string characters out of 5715801
  1331401 words of memory out of 5000000
- 55858 multiletter control sequences out of 15000+600000
+ 55860 multiletter control sequences out of 15000+600000
  572434 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,87p,1011b,2049s stack positions out of 10000i,1000n,20000p,200000b,200000s
