@@ -57,6 +57,52 @@ $$f(81) = 3, \quad f'(81) = \frac{1}{27}$$
 
 \subsection*{H11 Optimization}
 
+Optimization involves finding the maximum or minimum values of a function subject to certain constraints.
+
+\example{A farmer wants to build a rectangular pen with a fixed amount of fencing (100 meters). What dimensions will maximize the area of the pen?}
+
+\step{1}{Define the variables and equations.}
+
+Let $x$ be the length and $y$ be the width of the pen. The area $A$ is given by
+
+$$ A = xy $$
+
+and the constraint from the fencing is
+
+$$ 2x + 2y = 100 $$
+
+or
+
+$$ x + y = 50 $$
+
+\step{2}{Express one variable in terms of the other using the constraint.}
+
+$$ y = 50 - x $$
+
+\step{3}{Substitute into the area equation.}
+
+\begin{gather*}
+A(x) = x(50 - x) \\
+= 50x - x^2
+\end{gather*}
+
+\step{4}{Find the critical points by taking the derivative and setting it to zero.}
+
+\begin{gather*}
+A'(x) = 50 - 2x \\
+0 = 50 - 2x
+-2x = -50
+x = 25
+\end{gather*}
+
+\step{5}{Find the corresponding value of $y$.}
+
+$$y = 50 - 25 = 25$$
+
+\step{6}{Conclude with a justification:}
+
+The dimensions that maximize the area of the pen are 25 meters by 25 meters because the sign of the first derivative changes from positive to negative at $x = 25$, indicating a maximum.
+
 \subsection*{H12 Estimating with Riemann sums}
 
 \begin{description}
@@ -66,17 +112,165 @@ $$f(81) = 3, \quad f'(81) = \frac{1}{27}$$
 \item [Trapezoidal approximation] Average of RRAM and LRAM
 \end{description}
 
+\example{Estimate with MRAM the value of $\displaystyle \int_{0}^{4} (x^2 + 1) \: dx$ using 4 subintervals.}
 
+\step{1}{Determine $\Delta x$.}
+
+$$\Delta x = \frac{4 - 0}{4} = 1$$
+
+\step{2}{Identify the midpoints of each subinterval.}
+
+\begin{itemize}
+\item Subinterval $[0, 1]$: midpoint = $0.5$
+\item Subinterval $[1, 2]$: midpoint = $1.5$
+\item Subinterval $[2, 3]$: midpoint = $2.5$
+\item Subinterval $[3, 4]$: midpoint = $3.5$
+\end{itemize}
+
+\step{3}{Evaluate the function at each midpoint.}
+
+\begin{gather*}
+f(0.5) = (0.5)^2 + 1 = 1.25 \\
+f(1.5) = (1.5)^2 + 1 = 3.25 \\
+f(2.5) = (2.5)^2 + 1 = 7.25 \\
+f(3.5) = (3.5)^2 + 1 = 13.25
+\end{gather*}
+
+\step{4}{Calculate the Riemann sum.}
+
+\begin{gather*}
+\text{MRAM} = \Delta x [f(0.5) + f(1.5) + f(2.5) + f(3.5)] \\
+= 1 [1.25 + 3.25 + 7.25 + 13.25] \\
+= \boxed{25}
+\end{gather*}
 
 \subsection*{H13 Writing and interpreting Riemann sums}
 
-\subsection*{H14 Riemann sums and definite integrals}
+When converting a Riemann sum of the form
+
+$$\lim_{n \to \infty} \sum_{i=1}^{n} \frac{b}{n} f\left(a + \frac{bi}{n}\right)$$
+
+to a definite integral, follow these steps:
+
+\begin{enumerate}
+\item Identify $\Delta x$ (the width of each subinterval) as $\frac{b}{n}$.
+\item Identify the function $f(x)$ inside the sum.
+\item Determine the limits of integration:
+    \begin{itemize}
+    \item The lower limit is $a$ (the starting point of the interval).
+    \item The upper limit is $a + b$ (the endpoint of the interval).
+    \end{itemize}
+\item Write the definite integral as
+
+$$\int_{a}^{a+b} f(x) \: dx$$
+\end{enumerate}
+
+Similarly, when writing a Riemann sum for a definite integral of the form
+
+$$\int_{a}^{a+b} f(x) \: dx$$
+
+follow these steps:
+
+\begin{enumerate}
+\item Identify the interval $[a, a+b]$ and the function $f(x)$.
+\item Determine $\Delta x$ as $\frac{b}{n}$ (subtract upper limit of integration from lower) and plug into the equation for $x$ as $\frac{bi}{n}$
+\item Write the Riemann sum as
+
+$$\lim_{n \to \infty} \sum_{i=1}^{n} \frac{b}{n} f\left(a + \frac{bi}{n}\right)$$
+
+\end{enumerate}
+
+\example{Write the Riemann sum for the definite integral $\displaystyle \int_{2}^{5} (x^2 + 1) \: dx$.}
+
+\step{1}{Identify the interval and function.}
+
+The interval is $[2, 5]$ and the function is $f(x) = x^2 + 1$.
+
+\step{2}{Determine $\Delta x$ and express $x_i$.}
+
+\begin{gather*}
+\Delta x = \frac{5 - 2}{n} = \frac{3}{n} \\
+x_i = 2 + \frac{3i}{n}
+\end{gather*}
+
+\step{3}{Write the Riemann sum.}
+
+$$\boxed{\lim_{n \to \infty} \sum_{i=1}^{n} \frac{3}{n} \left[ \left(2 + \frac{3i}{n}\right)^2 + 1 \right]}$$
+
+{\large(H14 intentionally skipped.)}
 
 \subsection*{H15 Antiderivatives and indefinite integration}
 
+Antiderivative rules are the same as derivative rules, but in reverse. Always +C to the end of indefinite integrals.
+
+\example{Find the antiderivative of $\displaystyle f(x) = 3x^2 - 4x + 5$.}
+
+Apply the power rule to each term:
+
+\begin{gather*}
+\int (3x^2 - 4x + 5) \: dx \\
+= \int (\frac{3x^{2+1}}{2+1} - \frac{4x^{1+1}}{1+1} + \frac{5x^{0+1}}{0+1}) \: dx \\
+= \boxed{x^3 - 2x^2 + 5x + C}
+\end{gather*}
+
 \subsection*{H16 The Fundamental Theorem of Calculus}
 
-\subsection*{H17 Integration by u-substitution and change of variable}
+\subsubsection*{First Fundamental Theorem}
+
+If $f$ is continuous on $[a, b]$ and $F$ is an antiderivative of $f$ on $[a, b]$, then
+
+$$\int_{a}^{b} f(x) \: dx = F(b) - F(a)$$
+
+\subsubsection*{Second Fundamental Theorem}
+
+The derivative of the integral of a function is the original function:
+
+$$\frac{d}{dx} \int_{a}^{x} f(t) \: dt = f(x)$$
+
+\example{Evaluate $\displaystyle \frac{d}{dx} \int_{1}^{3x} (2t + 3) \: dt$.}
+
+\step{1}{Use the Second FTC and plug in the upper limit ($3x$) into the function.}
+
+\begin{gather*}
+2(3x)+3 \\
+= 6x + 3
+\end{gather*}
+
+\step{2}{Multiply by the derivative of the upper limit.}
+
+\begin{gather*}
+(6x + 3) \cdot \frac{d}{dx}(3x) \\
+= (6x + 3) \cdot 3 \\
+= \boxed{18x + 9}
+\end{gather*}
+
+\subsection*{H17 Integration by $u$-substitution and change of variable}
+
+Use $u$-substitution when the integral contains a function and its derivative.
+
+\example{Evaluate $\displaystyle \int 2x \sqrt{x^2 + 1} \: dx$.}
+
+\step{1}{Choose $u$ to be the inner function.}
+
+\begin{gather*}
+u = x^2 + 1 \\
+du = 2x \: dx
+\end{gather*}
+
+\step{2}{Rewrite the integral in terms of $u$.}
+
+$$\int \sqrt{u} \: du$$
+
+\step{3}{Integrate with respect to $u$.}
+
+\begin{gather*}
+\int \sqrt{u} \: du = \int u^{1/2} \: du \\
+= \frac{u^{3/2}}{(3/2)} + C \\
+= \frac{2}{3} u^{3/2} + C
+\end{gather*}
+
+\step{4}{Substitute back to $x$.}
+$$\boxed{\frac{2}{3} (x^2 + 1)^{3/2} + C}$$
 
 \subsection*{H18 Inverse trig integration}
 
@@ -118,6 +312,20 @@ du = \frac{3}{4} dx \\
 \subsection*{H19 Integration by division}
 
 Use long division or synthetic division when the degree of the numerator is greater than or equal to the degree of the denominator.
+
+\example{Evaluate $\displaystyle \int \frac{x^2 + 3x + 5}{x + 1} \, dx$.}
+
+\step{1}{Use long division to divide the polynomials.}
+
+$$x^2 + 3x + 5 = x + 2 + \frac{3}{x + 1}$$
+
+\step{2}{Rewrite the integral and solve.}
+
+\begin{gather*}
+\int \frac{x^2 + 3x + 5}{x + 1} \, dx \\
+= \int (x + 2 + \frac{3}{x + 1}) \, dx \\
+= \boxed{\frac{x^2}{2} + 2x + 3 \ln|x + 1| + C} \\
+\end{gather*}
 
 \subsection*{How to know which integration method to use}
 
