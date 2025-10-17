@@ -59,6 +59,15 @@ $$f(81) = 3, \quad f'(81) = \frac{1}{27}$$
 
 \subsection*{H12 Estimating with Riemann sums}
 
+\begin{description}
+\item [RRAM] Right Rectangular Approximation Method - heights of rects = heights of right endpoints
+\item [LRAM] Left Rectangular Approximation Method - heights of rects = heights of left endpoints
+\item [MRAM] Midpoint Rectangular Approximation Method - heights of rects = heights of midpoints
+\item [Trapezoidal approximation] Average of RRAM and LRAM
+\end{description}
+
+
+
 \subsection*{H13 Writing and interpreting Riemann sums}
 
 \subsection*{H14 Riemann sums and definite integrals}
@@ -99,8 +108,25 @@ du = \frac{3}{4} dx \\
 = \frac{1}{12} \int \frac{1}{\sqrt{1 - u^2}} \: du
 \end{gather*}
 
-\subsection*{H19 Long division and integration}
+\step{3}{Use the inverse trig formula.}
+
+\begin{gather*}
+\frac{1}{12} \int \frac{1}{\sqrt{1 - u^2}} \: du = \frac{1}{12} \arcsin(u) + C \\
+= \boxed{\frac{1}{12} \arcsin\left(\frac{3}{4}x\right) + C}
+\end{gather*}
+
+\subsection*{H19 Integration by division}
+
+Use long division or synthetic division when the degree of the numerator is greater than or equal to the degree of the denominator.
 
 \subsection*{How to know which integration method to use}
 
+\begin{itemize}
+    \item \textbf{Basic antiderivatives:} Check if the integral matches a basic antiderivative formula.
+    \item \textbf{$u$-substitution:} If the integral contains a function and its derivative, consider $u$-substitution.
+    \item \textbf{Change of variable:} Use when the 
+    \item \textbf{Long or synthetic division:} Use when the integrand is a rational function where the degree of the numerator is greater than or equal to the degree of the denominator.
+    \item \textbf{$u$-substitution with trigonometry:} Use when the integrand contains inverse trig derivatives.
+\end{itemize}
+    
 \end{document}
