@@ -244,6 +244,12 @@ $$\frac{d}{dx} \int_{a}^{x} f(t) \: dt = f(x)$$
 = \boxed{18x + 9}
 \end{gather*}
 
+\subsubsection*{Average value}
+
+The \textbf{average value} of a function $f$ on the interval $[a, b]$ is given by
+
+$$f_{\text{avg}} = \frac{1}{b - a} \int_{a}^{b} f(x) \: dx$$.
+
 \subsection*{H17 Integration by $u$-substitution and change of variable}
 
 Use $u$-substitution when the integral contains a function and its derivative.
@@ -271,6 +277,63 @@ $$\int \sqrt{u} \: du$$
 
 \step{4}{Substitute back to $x$.}
 $$\boxed{\frac{2}{3} (x^2 + 1)^{3/2} + C}$$
+
+Sometimes, $u$-substitution requires a \textbf{change of variable} when the integral does not directly contain the derivative of the inner function.
+
+\example{Evaluate $\displaystyle \int x\sqrt{x-1} \: dx$.}
+
+\step{1}{Choose $u$ to be the inner function.}
+
+\begin{gather*}
+u = x - 1 \\
+du = dx \\
+\end{gather*}
+
+This $u$-substitution is not sufficient because there is still an $x$ in the integral. To fix this, apply a change of variable.
+
+\step{2}{Solve for $x$ in terms of $u$.}
+
+$$ x = u + 1 $$
+
+\step{3}{Substitute.}
+
+\begin{gather*}
+\int x\sqrt{x-1} \: dx \\
+= \int (u + 1) \sqrt{u} \: du \\
+= \int (u + 1) u^{1/2} \: du \\
+\end{gather*}
+
+\step{4}{Distribute.}
+
+\begin{gather*}
+\int (u+1) u^{1/2} \: du \\
+= \int (u^{3/2} + u^{1/2}) \: du
+\end{gather*}
+
+\step{5}{Integrate with respect to $u$.}
+
+\begin{gather*}
+\int (u^{3/2} + u^{1/2}) \: du \\
+= \boxed{\frac{2}{5} u^{5/2} + \frac{2}{3} u^{3/2} + C}
+\end{gather*}
+
+For definite integrals, you can either substitute back to $x$ or change the limits of integration to $u$.
+
+\example{Evaluate the same integral as a definite integral: $\displaystyle \int_1^2 x\sqrt{x-1} \: dx$.}
+
+\step{1}{As defined previously, $u = x - 1$. Change the limits of integration to $u$.}
+
+When $x = 1$, $u = 1 - 1 = 0$.
+
+When $x = 2$, $u = 2 - 1 = 1$.
+
+\step{2}{Evaluate at the new limits of integration.}
+
+\begin{gather*}
+\left[ \frac{2}{5} u^{5/2} + \frac{2}{3} u^{3/2} \right]_{-1}^{0} \\
+= \left(\frac{2}{5}+\frac{2}{3}\right) - (0+0) \\
+= \boxed{\frac{16}{15}}
+\end{gather*}
 
 \subsection*{H18 Inverse trig integration}
 
@@ -332,7 +395,7 @@ $$x^2 + 3x + 5 = x + 2 + \frac{3}{x + 1}$$
 \begin{itemize}
     \item \textbf{Basic antiderivatives:} Check if the integral matches a basic antiderivative formula.
     \item \textbf{$u$-substitution:} If the integral contains a function and its derivative, consider $u$-substitution.
-    \item \textbf{Change of variable:} Use when the 
+    \item \textbf{Change of variable:} Use when u-substitution is not sufficient and a more complex substitution is needed.
     \item \textbf{Long or synthetic division:} Use when the integrand is a rational function where the degree of the numerator is greater than or equal to the degree of the denominator.
     \item \textbf{$u$-substitution with trigonometry:} Use when the integrand contains inverse trig derivatives.
 \end{itemize}
