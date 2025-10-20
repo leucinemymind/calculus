@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage{enumitem}
 \usepackage{geometry}
 \geometry{margin=1in}
 \usepackage{enumitem}
@@ -197,7 +198,40 @@ x_i = 2 + \frac{3i}{n}
 
 $$\boxed{\lim_{n \to \infty} \sum_{i=1}^{n} \frac{3}{n} \left[ \left(2 + \frac{3i}{n}\right)^2 + 1 \right]}$$
 
-{\large(H14 intentionally skipped.)}
+\subsection*{H15 Definite Integration}
+
+\subsubsection*{Properties of integration}
+
+\begin{gather*}
+\text{Flipping the limits:} \quad \int_{a}^{b} f(x) \: dx = -\int_{b}^{a} f(x) \: dx \\
+\text{Sum/Difference:} \quad \int_{a}^{b} [f(x) \pm g(x)] \: dx = \int_{a}^{b} f(x) \: dx \pm \int_{a}^{b} g(x) \: dx \\
+\text{Constant multiple:} \quad \int_{a}^{b} c f(x) \: dx = c \int_{a}^{b} f(x) \: dx \\
+\text{Additivity over intervals:} \quad \int_{a}^{b} f(x) \: dx + \int_{b}^{c} f(x) \: dx = \int_{a}^{c} f(x) \: dx \\
+\text{Even function:} \quad \int_{-a}^{a} f(x) \: dx = 2 \int_{0}^{a} f(x) \: dx \\
+\text{Odd function:} \quad \int_{-a}^{a} f(x) \: dx = 0 \\
+\text{Integral of a constant:} \quad \int_{a}^{b} c \: dx = c(b - a)
+\end{gather*}
+
+\example{$\displaystyle \int_0^\pi \sin x \: dx = 2$. Given this integral, find:}
+
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle \int_{\pi}^{2\pi} \sin x \, dx$
+\item $\displaystyle \int_0^{2\pi} 3 \sin x \, dx$
+\item $\displaystyle \int_0^{\frac{\pi}{2}} 3 \sin x \, dx$
+\item $\displaystyle \int_0^{\pi} 3 \sin x \, dx$
+\item $\displaystyle \int_{-\pi}^{\pi} \sin x \, dx$
+\end{enumerate}
+
+Answers:
+
+\begin{enumerate}[label=\alph*)]
+\item $-2$ (flipped limits)
+\item $6$ (constant multiple)
+\item $3$ (additivity over intervals)
+\item $6$ (constant multiple)
+\item $0$ (odd function)
+\end{enumerate}
+
 
 \subsection*{H15 Antiderivatives and indefinite integration}
 
@@ -317,7 +351,7 @@ $$ x = u + 1 $$
 = \boxed{\frac{2}{5} u^{5/2} + \frac{2}{3} u^{3/2} + C}
 \end{gather*}
 
-For definite integrals, you can either substitute back to $x$ or change the limits of integration to $u$.
+For definite integrals, either substitute back to $x$ or change the limits of integration to $u$.
 
 \example{Evaluate the same integral as a definite integral: $\displaystyle \int_1^2 x\sqrt{x-1} \: dx$.}
 
