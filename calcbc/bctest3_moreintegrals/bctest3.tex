@@ -166,4 +166,110 @@ Important things to note:
 \item If the equation is not in the standard form, it may need to be manipulated algebraically to identify $k$ and $M$.
 \end{itemize}
 
+\subsection*{H23 (review of integrals, skipped)}
+
+\subsection*{H24 Integration by parts, solving for the integral, and tabular integration}
+
+\subsubsection*{Integration by parts}
+
+Integration by parts is a technique used to integrate products of functions following the formula\footnote{This formula can be memorized with the mnemonic device ``ultraviolet voodoo'', origin unknown :)}:
+
+$$\int u \: dv = uv - \int v \: du$$
+
+where $u$ and $dv$ are parts of the original integral.
+
+To identify $u$, use the initialism \textbf{LIATE}, which stands for \textbf{L}ogarithmic, \textbf{I}nverse trigonometric, \textbf{A}lgebraic, \textbf{T}rigonometric, and \textbf{E}xponential functions. The function that appears first in this list should be chosen as $u$.
+
+\example{Use integration by parts to evaluate the integral $\displaystyle \int x e^x \: dx$.}
+
+\step{1}{Identify $u$ and $dv$ with $du$ and $v$.}
+
+Let $u = x$ (algebraic) and $dv = e^x \: dx$. Thus, $du = dx$ and $v = e^x$.\footnote{While $u=x$ is not a valid choice for u-substitution since it does not simplify the integral, it does work well for integration by parts.}
+
+\step{2}{Follow the formula.}
+
+\begin{gather*}
+uv - \int v \: du \\
+= x e^x - \int e^x \: dx
+\end{gather*}
+
+\step{3}{Integrate.}
+
+\begin{gather*}
+x e^x - \int e^x \: dx \\ 
+= \boxed{x e^x - e^x + C} \\
+\end{gather*}
+
+\subsubsection*{Solving for the integral}
+
+Sometimes, applying integration by parts results in an equation that contains the original integral. In such cases, solve for the integral algebraically.
+
+Consider the following integral:
+
+$$\int e^x \cos x \: dx$$
+
+This integral looks solvable, but applying integration by parts twice will lead back to the original integral. To test this, let $u = e^x$ and $dv = \cos x \: dx$, and therefore $du = e^x \: dx$ and $v = \sin x$. Following the formula 
+
+$$ \int u \: dv = uv - \int v \: du $$
+
+yields:
+
+$$ \int e^x \cos x \: dx = e^x \sin x - \int e^x \sin x \: dx $$
+
+Now, apply integration by parts again to the remaining integral $\int e^x \sin x \: dx$. Let $u = e^x$ and $dv = \sin x \: dx$, so $du = e^x \: dx$ and $v = -\cos x$. Applying the formula again gives:
+
+$$ \int e^x \sin x \: dx = -e^x \cos x + \int e^x \cos x \: dx $$
+
+Substituting this back into the previous equation results in:
+
+$$ \int e^x \cos x \: dx = e^x \sin x - \left( -e^x \cos x + \int e^x \cos x \: dx \right) $$
+
+This simplifies to:
+
+$$ \int e^x \cos x \: dx = e^x \sin x + e^x \cos x - \int e^x \cos x \: dx $$
+
+Now, the original integral is on both sides of the equation. To solve for it, add $\int e^x \cos x \: dx$ to both sides:
+
+$$ 2 \int e^x \cos x \: dx = e^x (\sin x + \cos x) $$
+
+Finally, divide both sides by 2 to isolate the integral:
+
+$$ \int e^x \cos x \: dx = \boxed{\frac{e^x (\sin x + \cos x)}{2} + C} $$
+
+\subsubsection*{Tabular integration}
+
+Tabular integration is a method used to simplify the process of integration by parts when one function can be differentiated repeatedly until it becomes zero, and the other function can be integrated repeatedly.
+
+\example{Use tabular integration to evaluate the integral $\displaystyle \int x^3 e^x \: dx$.}
+
+\step{1}{Set up the table and differentiate $u$ until the left side reaches 0. Integrate $dv$ the same number of times.}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+$u$ & $dv$ \\
+\hline
+$x^3$ & $e^x$ \\
+$3x^2$ & $e^x$ \\
+$6x$ & $e^x$ \\
+$6$ & $e^x$ \\
+$0$ & $e^x$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\step{2}{Multiply diagonally, alternating signs, and sum the results.}
+
+\begin{gather*}
++ x^3 e^x \\
+- 3x^2 e^x \\
++ 6x e^x \\
+- 6 e^x \\
+\end{gather*}
+
+\step{3}{Write the final answer.}
+
+$$\int x^3 e^x \: dx = \boxed{e^x (x^3 - 3x^2 + 6x - 6) + C}$$
+
 \end{document}
