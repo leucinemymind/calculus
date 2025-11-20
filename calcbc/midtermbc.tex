@@ -1,0 +1,927 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{textcomp}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{gensymb}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{nicefrac}
+\hypersetup{
+    colorlinks=true,        % Enable colored links
+    linkcolor=teal,         % Set color for internal links
+    citecolor=teal,         % Set color for citations
+    filecolor=teal,         % Set color for file links
+    urlcolor=teal           % Set color for URLs
+}
+
+\DeclareMathOperator{\arcsec}{arcsec}
+
+\newcommand{\example}[1]{\textcolor{blue}{\textbf{Example:} #1}}
+\newcommand{\step}[2]{\textcolor{blue}{\textbf{Step #1:} #2}}
+
+\begin{document}
+
+\begin{center}
+\textbf{{\Large AP Calculus BC Midterm}}
+\end{center}
+
+\subsection*{H1 Rates of change}
+
+The \textbf{average rate of change} (also AROC, slope of the secant line) of a function $f$ over the interval $[a, b]$ is given by:
+
+\[\frac{f(b) - f(a)}{b - a}\]
+
+The \textbf{instantaneous rate of change} (also IROC, slope of the tangent line) of a function $f$ at a point $x = c$ is given by the derivative:
+
+\[f'(c) = \lim_{h \to 0} \frac{f(c + h) - f(c)}{h}\]
+
+This is also known as the \textbf{difference quotient} or the \textbf{limit definition of the derivative.}
+
+\example{A tangent line to the graph $f(x)$ at the point $x = a$ uses the instantaneous rate of change for the slope. Write the equation of the tangent line to $f(x) = -x^2+5$ and then use the tangent line to approximate $f(5.1)$.}
+
+\step{1}{Find the derivative by the power rule.}
+
+\begin{gather*}
+f(x) = -x^2+5 \\
+f'(x) = -2x
+\end{gather*}
+
+\step{2}{Find the equation of the tangent line at x = 5.}
+
+\begin{gather*}
+f'(5) = -10 \\
+f(5) = -5^2 + 5 = -20 \\
+y+20 = -10(x-5) \\
+y = -10x + 50 - 20 \\
+y = -10x + 30
+\end{gather*}
+
+\step{3}{Find $f(5.1)$ using the tangent line.}
+
+\begin{gather*}
+f(5.1) \approx -10(5.1) + 30 \\ 
+= -51 + 30 \\
+= \boxed{-21}
+\end{gather*}
+
+\subsection*{H2 Limits and continuity}
+
+The \textbf{limit} of a function is the y-value the graph approaches. Limit values are not affected by holes, random points, or sharp turns. However, there are some conditions for a limit to exist:
+
+\begin{enumerate}
+\item \textbf{The limit from the left must equal the limit from the right.} In math terms:
+\[\lim_{x \to c^-} f(x) = \lim_{x \to c^+} f(x)\]
+If the limit from the left does not equal the limit from the right, then the limit does not exist (DNE). \textit{If the limit from the left equals the limit from the right and the value of the function equals the value of the limit, then the function is \textbf{continuous} at the given point.}
+\item \textbf{The limit must approach a finite value.} If the limit approaches infinity, then the limit does not exist (DNE). However, if the limit approaches $\infty$ or $-\infty$ from both the left and the right, the limit can be considered to exist as either $\infty$ or $-\infty$.
+\end{enumerate}
+
+There are different \textbf{types of discontinuities} to consider:
+
+\paragraph{Removable} Removable discontinuities can be ``removed'' when the function is defined at the point of discontinuity. This is represented by a hole in the graph. The limit exists at the hole.
+
+\paragraph{Non-removable jump} Jump discontinuities occur when the limit from the left does not equal the limit from the right and both limits approach finite values. This is represented by a jump in the graph. The limit does not exist at the jump.
+
+\paragraph{Asymptotic} Asymptotic discontinuities occur when the limit from the left or right approaches $\infty$ or $-\infty$. This is represented by a vertical asymptote in the graph. The limit does not exist at the asymptote or can be regarded as $\infty$ or $-\infty$ if the asymptote is an even asymptote.
+
+\paragraph{Oscillating} Oscillating discontinuities occur when the function oscillates between two values as it approaches a point. This is represented by a wavy line in the graph that goes up and down indefinitely. The limit does not exist at the oscillation.
+
+\example{In the graph of $\displaystyle f(x) = \frac{x+3}{x^2-9}$, at what $x$-values do removable discontinuities occur? Asymptotic discontinuities? What is the limit ($y$-value) as $x$ approaches the removable discontinuity?}
+
+\step{1}{Factor the function and cross out the common factors.}
+
+\begin{gather*}
+f(x) = \frac{x+3}{(x-3)(x+3)} \\
+f(x) = \frac{1}{x-3}, x \neq -3
+\end{gather*}
+
+The removable discontinuity occurs at $ x = -3 $.
+
+\step{2}{Find the limit as $x$ approaches the removable discontinuity.}
+
+\begin{gather*}
+\lim_{x \to -3} f(x)
+= \lim_{x \to -3} \frac{1}{x-3} \\
+= \frac{1}{-3-3} \\
+= \boxed{-\frac{1}{6}}
+\end{gather*}
+
+\step{3}{Find the asymptotic discontinuity.}
+
+The asymptotic discontinuity occurs at $ x = 3 $ because $x$ cannot equal 3 under an y circumstance.
+
+Check with \href{https://www.desmos.com/calculator}{Desmos}.
+
+\subsubsection*{What to do to find...}
+
+\paragraph{Limits at a point} Direct substitution or algebraic manipulation (factoring, rationalizing, etc.).
+
+\paragraph{Limits at infinity} Consider the dominant term in both the numerator and denominator, then simplify.
+
+\paragraph{Horizontal asymptotes} Find the limit as $x$ approaches $\infty$ and $-\infty$. If the limit approaches a finite value, then that value is the horizontal asymptote.
+
+\paragraph{Indeterminate forms} Use L'Hopital's rule and find the derivative of the top over the derivative of the bottom (separately, not with quotient rule). DO NOT WRITE ``$f(x) = \frac{0}{0}$''!!!! (``$\frac{0}{0}$ indeterminate form'' is fine.)
+
+\subsection*{H3 Non-traditional limits}
+
+To find non-traditional limits, apply one of the following:
+
+\begin{itemize}
+\item Evaluate the limit separately from the left and from the right and see if they match.
+\item If the limit is a composition, evaluate the limit of the inner function first, then evaluate the limit of the outer function as it approaches the limit of the inner function.
+\item If the limit is a composition and the outer function has a jump discontinuity, evaluate whether the inner function approaches the value of the jump discontinuity from the top (right, +) or from the bottom (left, -), then evaluate the outer function as a one-sided limit.
+\item If the limit is a composition and the inner function does not merely approach a value but rather stays consistently at that value, then evaluate the outer function at the value of the limit of the inner function.
+\end{itemize}
+
+\subsection*{H4 Differentiation}
+
+Refer to \href{https://www.mathsisfun.com/calculus/derivatives-rules.html}{derivative rules} for a full list.
+
+\subsection*{H5 Graphs of derivatives and derivatives of inverse (trig) functions}
+
+The point $(a, b)$ is on $f(x)$, and $(b, a)$ is on $f^{-1}(x)$, its inverse. The derivative of the inverse function is given by:
+
+\[(f^{-1})'(b) = \frac{1}{f'(a)}\]
+
+In other words, the derivative of the inverse at the y-value of a function equals the reciprocal of the derivative of the function at the x-value.
+
+\begin{gather*}
+\frac{d}{dx} (\sin^{-1} x) = \frac{1}{\sqrt{1-x^2}} \\
+\frac{d}{dx} (\cos^{-1} x) = \frac{-1}{\sqrt{1-x^2}} \\
+\frac{d}{dx} (\tan^{-1} x) = \frac{1}{1+x^2}
+\end{gather*}
+
+\href{https://english.mathe-online.at/tests/diff1/ablerkennen.html}{The big derivative puzzle}
+
+\subsection*{H6 Position, acceleration, velocity}
+
+\textbf{Velocity} is the first derivative of \textbf{position} (position is the integral of velocity) \\
+\textbf{Acceleration} is the first derivative of velocity (velocity is the integral of acceleration) \\
+Acceleration is the second derivative of position \\
+
+\textbf{Distance} vs \textbf{displacement}: Distance is the total length traveled, while displacement is the change in position (final position - initial position). To calculate total distance, find the critical points of the velocity function, then evaluate the position function at those points and add the absolute values of the differences.
+
+\subsection*{H7 Implicit differentiation}
+
+\example{Find $\frac{dy}{dx}$ if $x^2+xy+y^2 = 7$.}
+
+\step{1}{Differentiate both sides with respect to $x$.}
+
+\begin{gather*}
+\frac{d}{dx} (x^2+xy+y^2) = \frac{d}{dx} (7) \\
+2x + x \frac{dy}{dx} + y + 2y \frac{dy}{dx} = 0
+\end{gather*}
+
+\step{2}{Solve.}
+\begin{gather*}
+x \frac{dy}{dx} + 2y \frac{dy}{dx} = -2x - y \\
+\frac{dy}{dx} (x + 2y) = -2x - y \\
+\boxed{\frac{dy}{dx} = \frac{-2x - y}{x + 2y}}
+\end{gather*}
+
+\subsection*{H8 Related rates}
+
+\example{A 15-foot ladder leans against a vertical wall. The bottom is sliding away from the wall at a rate of 2 ft s$^{-1}$. Let $\theta$ be the angle between the ground and the ladder. At what rate is $\theta$ changing when the bottom of the ladder is 9 feet from the wall?}
+
+\step{1}{Draw a picture, label the variables, then list what is given and what is to be found.}
+
+\begin{itemize}
+\item Given: $\frac{dx}{dt} = 2$ ft/s, $x = 9$ ft, ladder length = 15 ft
+\item Find: $\frac{d\theta}{dt}$ when $x = 9$ ft
+\end{itemize}
+
+\step{2}{Write an equation relating the variables.}
+\[\cos \theta = \frac{x}{15}\]
+
+\step{3}{Differentiate implicitly with respect to $t$.}
+\[-\sin \theta \frac{d\theta}{dt} = \frac{1}{15} \frac{dx}{dt}\]
+
+\step{4}{Solve for $\frac{d\theta}{dt}$.}
+\[\frac{d\theta}{dt} = \frac{-1}{15 \sin \theta} \frac{dx}{dt}\]
+\step{5}{Find $\sin \theta$ when $x = 9$ ft.}
+\begin{gather*}
+\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}} \\ = \frac{\sqrt{15^2 - 9^2}}{15} \\ = \frac{12}{15} \\ = \boxed{\frac{4}{5}}
+\end{gather*}
+
+\step{6}{Substitute known values and calculate.}
+\begin{gather*}
+\frac{d\theta}{dt} = \frac{-1}{15 \cdot \frac{4}{5}} \cdot 2 \\ = \boxed{\frac{-1}{6} \text{ rad/s}}
+\end{gather*}
+
+\subsection*{H9 Extrema and concavity}
+
+\textbf{Critical points} occur when $f'(x) = 0$ or $f'(x)$ is undefined. To find critical points, find the derivative, set it equal to zero, and solve.
+
+\textbf{Absolute extrema} are the highest and lowest points on a closed interval. To find absolute extrema, evaluate the function at the critical points and at the endpoints of the interval, then compare the values.
+
+\textbf{Local extrema} are the highest and lowest points in a small neighborhood. To find local extrema, use the first or second derivative test.
+
+\textbf{First derivative test}: Find the critical points, then test values in the intervals between the critical points to see if the derivative is positive or negative. If $f'(x)$ changes from positive to negative at a critical point, then $f(x)$ has a local maximum at that point. If $f'(x)$ changes from negative to positive at a critical point, then $f(x)$ has a local minimum at that point. If $f'(x)$ does not change sign at a critical point, then $f(x)$ has no local extremum at that point.
+
+\textbf{Second derivative test}: Find the critical points, then find the second derivative. If $f''(x) > 0$ at a critical point, then $f(x)$ has a local minimum at that point. If $f''(x) < 0$ at a critical point, then $f(x)$ has a local maximum at that point. If $f''(x) = 0$ at a critical point, then the test is inconclusive.
+
+\textbf{Concavity} describes the direction the graph is curving. If $f''(x) > 0$, then the graph is concave up. If $f''(x) < 0$, then the graph is concave down. \textbf{Inflection points} occur when $f''(x) = 0$ or $f''(x)$ is undefined. 
+
+\subsection*{The theorems}
+
+\paragraph{Intermediate Value Theorem} If $f$ is continuous on closed interval $[a, b]$ and $x$ is any number between $f(a)$ and $f(b)$, then there exists at least one number $c$ in the open interval $(a, b)$ such that $f(c) = x$. Essentially, if a function is continuous, it takes on every value between $f(a)$ and $f(b)$.
+
+\paragraph{Mean Value Theorem} If $f$ is continuous on the closed interval $[a, b]$ and differentiable on the open interval $(a, b)$, then there exists at least one number $c$ in the open interval $(a, b)$ such that
+
+\[f'(c) = \frac{f(b) - f(a)}{b - a}\]
+
+In other words, there is at least one point where IROC (slope of the tangent line) equals AROC (slope of the secant line) over the interval.
+
+\paragraph{Extreme Value Theorem} If $f$ is continuous on the closed interval $[a, b]$, then $f$ has both a maximum and a minimum value on that interval.
+
+\subsection*{H10 Linearization}
+
+Linearization is a method used to approximate the value of a function near a given point using the tangent line at that point. 
+
+\example{Approximate the cube root of 82 using linearization.}
+
+\step{1}{Identify the function and the point of tangency.}
+
+$$f(x) = \sqrt[3]{x}, \quad a = 81$$
+
+\step{2}{Find the derivative of the function.}
+
+$$f'(x) = \frac{1}{3x^{2/3}}$$
+
+\step{3}{Evaluate the function and its derivative at the point of tangency.}
+
+$$f(81) = 3, \quad f'(81) = \frac{1}{27}$$
+
+\step{4}{Write the equation of the tangent line.}
+
+\subsection*{H11 Optimization}
+
+Optimization involves finding the maximum or minimum values of a function subject to certain constraints.
+
+\example{A farmer wants to build a rectangular pen with a fixed amount of fencing (100 meters). What dimensions will maximize the area of the pen?}
+
+\step{1}{Define the variables and equations.}
+
+Let $x$ be the length and $y$ be the width of the pen. The area $A$ is given by
+
+$$ A = xy $$
+
+and the constraint from the fencing is
+
+$$ 2x + 2y = 100 $$
+
+or
+
+$$ x + y = 50 $$
+
+\step{2}{Express one variable in terms of the other using the constraint.}
+
+$$ y = 50 - x $$
+
+\step{3}{Substitute into the area equation.}
+
+\begin{gather*}
+A(x) = x(50 - x) \\
+= 50x - x^2
+\end{gather*}
+
+\step{4}{Find the critical points by taking the derivative and setting it to zero.}
+
+\begin{gather*}
+A'(x) = 50 - 2x \\
+0 = 50 - 2x
+-2x = -50
+x = 25
+\end{gather*}
+
+\step{5}{Find the corresponding value of $y$.}
+
+$$y = 50 - 25 = 25$$
+
+\step{6}{Conclude with a justification:}
+
+The dimensions that maximize the area of the pen are 25 meters by 25 meters because the sign of the first derivative changes from positive to negative at $x = 25$, indicating a maximum.
+
+\subsection*{H12 Estimating with Riemann sums}
+
+\begin{description}
+\item [RRAM] Right Rectangular Approximation Method - heights of rects = heights of right endpoints
+\item [LRAM] Left Rectangular Approximation Method - heights of rects = heights of left endpoints
+\item [MRAM] Midpoint Rectangular Approximation Method - heights of rects = heights of midpoints
+\item [Trapezoidal approximation] Average of RRAM and LRAM
+\end{description}
+
+\example{Estimate with MRAM the value of $\displaystyle \int_{0}^{4} (x^2 + 1) \: dx$ using 4 subintervals.}
+
+\step{1}{Determine $\Delta x$.}
+
+$$\Delta x = \frac{4 - 0}{4} = 1$$
+
+\step{2}{Identify the midpoints of each subinterval.}
+
+\begin{itemize}
+\item Subinterval $[0, 1]$: midpoint = $0.5$
+\item Subinterval $[1, 2]$: midpoint = $1.5$
+\item Subinterval $[2, 3]$: midpoint = $2.5$
+\item Subinterval $[3, 4]$: midpoint = $3.5$
+\end{itemize}
+
+\step{3}{Evaluate the function at each midpoint.}
+
+\begin{gather*}
+f(0.5) = (0.5)^2 + 1 = 1.25 \\
+f(1.5) = (1.5)^2 + 1 = 3.25 \\
+f(2.5) = (2.5)^2 + 1 = 7.25 \\
+f(3.5) = (3.5)^2 + 1 = 13.25
+\end{gather*}
+
+\step{4}{Calculate the Riemann sum.}
+
+\begin{gather*}
+\text{MRAM} = \Delta x [f(0.5) + f(1.5) + f(2.5) + f(3.5)] \\
+= 1 [1.25 + 3.25 + 7.25 + 13.25] \\
+= \boxed{25}
+\end{gather*}
+
+\subsection*{H13 Writing and interpreting Riemann sums}
+
+When converting a Riemann sum of the form
+
+$$\lim_{n \to \infty} \sum_{i=1}^{n} \frac{b}{n} f\left(a + \frac{bi}{n}\right)$$
+
+to a definite integral, follow these steps:
+
+\begin{enumerate}
+\item Identify $\Delta x$ (the width of each subinterval) as $\frac{b}{n}$.
+\item Identify the function $f(x)$ inside the sum.
+\item Determine the limits of integration:
+    \begin{itemize}
+    \item The lower limit is $a$ (the starting point of the interval).
+    \item The upper limit is $a + b$ (the endpoint of the interval).
+    \end{itemize}
+\item Write the definite integral as
+
+$$\int_{a}^{a+b} f(x) \: dx$$
+\end{enumerate}
+
+Similarly, when writing a Riemann sum for a definite integral of the form
+
+$$\int_{a}^{a+b} f(x) \: dx$$
+
+follow these steps:
+
+\begin{enumerate}
+\item Identify the interval $[a, a+b]$ and the function $f(x)$.
+\item Determine $\Delta x$ as $\frac{b}{n}$ (subtract upper limit of integration from lower) and plug into the equation for $x$ as $\frac{bi}{n}$
+\item Write the Riemann sum as
+
+$$\lim_{n \to \infty} \sum_{i=1}^{n} \frac{b}{n} f\left(a + \frac{bi}{n}\right)$$
+
+\end{enumerate}
+
+\example{Write the Riemann sum for the definite integral $\displaystyle \int_{2}^{5} (x^2 + 1) \: dx$.}
+
+\step{1}{Identify the interval and function.}
+
+The interval is $[2, 5]$ and the function is $f(x) = x^2 + 1$.
+
+\step{2}{Determine $\Delta x$ and express $x_i$.}
+
+\begin{gather*}
+\Delta x = \frac{5 - 2}{n} = \frac{3}{n} \\
+x_i = 2 + \frac{3i}{n}
+\end{gather*}
+
+\step{3}{Write the Riemann sum.}
+
+$$\boxed{\lim_{n \to \infty} \sum_{i=1}^{n} \frac{3}{n} \left[ \left(2 + \frac{3i}{n}\right)^2 + 1 \right]}$$
+
+\subsection*{H15 Definite Integration}
+
+\subsubsection*{Properties of integration}
+
+\begin{gather*}
+\text{Flipping the limits:} \quad \int_{a}^{b} f(x) \: dx = -\int_{b}^{a} f(x) \: dx \\
+\text{Sum/Difference:} \quad \int_{a}^{b} [f(x) \pm g(x)] \: dx = \int_{a}^{b} f(x) \: dx \pm \int_{a}^{b} g(x) \: dx \\
+\text{Constant multiple:} \quad \int_{a}^{b} c f(x) \: dx = c \int_{a}^{b} f(x) \: dx \\
+\text{Additivity over intervals:} \quad \int_{a}^{b} f(x) \: dx + \int_{b}^{c} f(x) \: dx = \int_{a}^{c} f(x) \: dx \\
+\text{Even function:} \quad \int_{-a}^{a} f(x) \: dx = 2 \int_{0}^{a} f(x) \: dx \\
+\text{Odd function:} \quad \int_{-a}^{a} f(x) \: dx = 0 \\
+\text{Integral of a constant:} \quad \int_{a}^{b} c \: dx = c(b - a)
+\end{gather*}
+
+\example{$\displaystyle \int_0^\pi \sin x \: dx = 2$. Given this integral, find:}
+
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle \int_{\pi}^{2\pi} \sin x \, dx$
+\item $\displaystyle \int_0^{2\pi} 3 \sin x \, dx$
+\item $\displaystyle \int_0^{\frac{\pi}{2}} 3 \sin x \, dx$
+\item $\displaystyle \int_0^{\pi} 3 \sin x \, dx$
+\item $\displaystyle \int_{-\pi}^{\pi} \sin x \, dx$
+\end{enumerate}
+
+Answers:
+
+\begin{enumerate}[label=\alph*)]
+\item $-2$ (flipped limits)
+\item $6$ (constant multiple)
+\item $3$ (additivity over intervals)
+\item $6$ (constant multiple)
+\item $0$ (odd function)
+\end{enumerate}
+
+
+\subsection*{H15 Antiderivatives and indefinite integration}
+
+Antiderivative rules are the same as derivative rules, but in reverse. Always +C to the end of indefinite integrals.
+
+\example{Find the antiderivative of $\displaystyle f(x) = 3x^2 - 4x + 5$.}
+
+Apply the power rule to each term:
+
+\begin{gather*}
+\int (3x^2 - 4x + 5) \: dx \\
+= \int (\frac{3x^{2+1}}{2+1} - \frac{4x^{1+1}}{1+1} + \frac{5x^{0+1}}{0+1}) \: dx \\
+= \boxed{x^3 - 2x^2 + 5x + C}
+\end{gather*}
+
+\subsection*{H16 The Fundamental Theorem of Calculus}
+
+\subsubsection*{First Fundamental Theorem}
+
+If $f$ is continuous on $[a, b]$ and $F$ is an antiderivative of $f$ on $[a, b]$, then
+
+$$\int_{a}^{b} f(x) \: dx = F(b) - F(a)$$
+
+\subsubsection*{Second Fundamental Theorem}
+
+The derivative of the integral of a function is the original function:
+
+$$\frac{d}{dx} \int_{a}^{x} f(t) \: dt = f(x)$$
+
+\example{Evaluate $\displaystyle \frac{d}{dx} \int_{1}^{3x} (2t + 3) \: dt$.}
+
+\step{1}{Use the Second FTC and plug in the upper limit ($3x$) into the function.}
+
+\begin{gather*}
+2(3x)+3 \\
+= 6x + 3
+\end{gather*}
+
+\step{2}{Multiply by the derivative of the upper limit.}
+
+\begin{gather*}
+(6x + 3) \cdot \frac{d}{dx}(3x) \\
+= (6x + 3) \cdot 3 \\
+= \boxed{18x + 9}
+\end{gather*}
+
+\subsubsection*{Average value}
+
+The \textbf{average value} of a function $f$ on the interval $[a, b]$ is given by
+
+$$f_{\text{avg}} = \frac{1}{b - a} \int_{a}^{b} f(x) \: dx$$.
+
+\subsection*{H17 Integration by $u$-substitution and change of variable}
+
+Use $u$-substitution when the integral contains a function and its derivative.
+
+\example{Evaluate $\displaystyle \int 2x \sqrt{x^2 + 1} \: dx$.}
+
+\step{1}{Choose $u$ to be the inner function.}
+
+\begin{gather*}
+u = x^2 + 1 \\
+du = 2x \: dx
+\end{gather*}
+
+\step{2}{Rewrite the integral in terms of $u$.}
+
+$$\int \sqrt{u} \: du$$
+
+\step{3}{Integrate with respect to $u$.}
+
+\begin{gather*}
+\int \sqrt{u} \: du = \int u^{1/2} \: du \\
+= \frac{u^{3/2}}{(3/2)} + C \\
+= \frac{2}{3} u^{3/2} + C
+\end{gather*}
+
+\step{4}{Substitute back to $x$.}
+$$\boxed{\frac{2}{3} (x^2 + 1)^{3/2} + C}$$
+
+Sometimes, $u$-substitution requires a \textbf{change of variable} when the integral does not directly contain the derivative of the inner function.
+
+\example{Evaluate $\displaystyle \int x\sqrt{x-1} \: dx$.}
+
+\step{1}{Choose $u$ to be the inner function.}
+
+\begin{gather*}
+u = x - 1 \\
+du = dx \\
+\end{gather*}
+
+This $u$-substitution is not sufficient because there is still an $x$ in the integral. To fix this, apply a change of variable.
+
+\step{2}{Solve for $x$ in terms of $u$.}
+
+$$ x = u + 1 $$
+
+\step{3}{Substitute.}
+
+\begin{gather*}
+\int x\sqrt{x-1} \: dx \\
+= \int (u + 1) \sqrt{u} \: du \\
+= \int (u + 1) u^{1/2} \: du \\
+\end{gather*}
+
+\step{4}{Distribute.}
+
+\begin{gather*}
+\int (u+1) u^{1/2} \: du \\
+= \int (u^{3/2} + u^{1/2}) \: du
+\end{gather*}
+
+\step{5}{Integrate with respect to $u$.}
+
+\begin{gather*}
+\int (u^{3/2} + u^{1/2}) \: du \\
+= \boxed{\frac{2}{5} u^{5/2} + \frac{2}{3} u^{3/2} + C}
+\end{gather*}
+
+For definite integrals, either substitute back to $x$ or change the limits of integration to $u$.
+
+\example{Evaluate the same integral as a definite integral: $\displaystyle \int_1^2 x\sqrt{x-1} \: dx$.}
+
+\step{1}{As defined previously, $u = x - 1$. Change the limits of integration to $u$.}
+
+When $x = 1$, $u = 1 - 1 = 0$.
+
+When $x = 2$, $u = 2 - 1 = 1$.
+
+\step{2}{Evaluate at the new limits of integration.}
+
+\begin{gather*}
+\left[ \frac{2}{5} u^{5/2} + \frac{2}{3} u^{3/2} \right]_{-1}^{0} \\
+= \left(\frac{2}{5}+\frac{2}{3}\right) - (0+0) \\
+= \boxed{\frac{16}{15}}
+\end{gather*}
+
+\subsection*{H18 Inverse trig integration}
+
+\begin{gather*}
+\int \frac{1}{\sqrt{a^2 - x^2}} \: dx = \arcsin \left( \frac{x}{a} \right) + C \\
+\int \frac{1}{a^2 + x^2} \: dx = \frac{1}{a} \arctan \left( \frac{x}{a} \right) + C \\
+\int \frac{1}{x \sqrt{x^2 - a^2}} \: dx = \frac{1}{a} \arcsec \left( \frac{|x|}{a} \right) + C
+\end{gather*}
+
+(no need to memorize formulas - memorize forms, use $u$-substitution instead)
+
+\example{Evaluate $\displaystyle \int \frac{1}{\sqrt{16 - 9x^2}} \: dx$.}
+
+\step{1}{Reduce the constant to 1.}
+
+\begin{gather*}
+\int \frac{1}{\sqrt{16 - 9x^2}} \: dx \\
+= \int \frac{1}{16\sqrt{1 - \frac{9}{16}x^2}} \: dx \\
+= \frac{1}{16} \int \frac{1}{\sqrt{1 - \left(\frac{3}{4}x\right)^2}} \: dx
+\end{gather*}
+
+\step{2}{Use $u$-substitution with $u = \frac{3}{4}x$.}
+
+\begin{gather*}
+u = \frac{3}{4}x \\
+du = \frac{3}{4} dx \\
+\frac{4}{3} du = dx \\
+\frac{1}{16} \cdot \frac{4}{3} \int \frac{1}{\sqrt{1 - u^2}} \: du \\
+= \frac{1}{12} \int \frac{1}{\sqrt{1 - u^2}} \: du
+\end{gather*}
+
+\step{3}{Use the inverse trig formula.}
+
+\begin{gather*}
+\frac{1}{12} \int \frac{1}{\sqrt{1 - u^2}} \: du = \frac{1}{12} \arcsin(u) + C \\
+= \boxed{\frac{1}{12} \arcsin\left(\frac{3}{4}x\right) + C}
+\end{gather*}
+
+\subsection*{H19 Integration by division}
+
+Use long division or synthetic division when the degree of the numerator is greater than or equal to the degree of the denominator.
+
+\example{Evaluate $\displaystyle \int \frac{x^2 + 3x + 5}{x + 1} \, dx$.}
+
+\step{1}{Use long division to divide the polynomials.}
+
+$$x^2 + 3x + 5 = x + 2 + \frac{3}{x + 1}$$
+
+\step{2}{Rewrite the integral and solve.}
+
+\begin{gather*}
+\int \frac{x^2 + 3x + 5}{x + 1} \, dx \\
+= \int (x + 2 + \frac{3}{x + 1}) \, dx \\
+= \boxed{\frac{x^2}{2} + 2x + 3 \ln|x + 1| + C} \\
+\end{gather*}
+
+\subsection*{How to know which integration method to use}
+
+\begin{itemize}
+    \item \textbf{Basic antiderivatives:} Check if the integral matches a basic antiderivative formula.
+    \item \textbf{$u$-substitution:} If the integral contains a function and its derivative, consider $u$-substitution.
+    \item \textbf{Change of variable:} Use when u-substitution is not sufficient and a more complex substitution is needed.
+    \item \textbf{Long or synthetic division:} Use when the integrand is a rational function where the degree of the numerator is greater than or equal to the degree of the denominator.
+    \item \textbf{$u$-substitution with trigonometry:} Use when the integrand contains inverse trig derivatives.
+\end{itemize}
+
+\subsection*{H20 Slope fields and Euler's method}
+
+A slope field is a graphical representation of a differential equation that shows the slope of the solution curve at each point in the plane.
+
+For example, the slope field for the differential equation $\displaystyle \frac{dy}{dx} = x^2 - x -2$ can be drawn by calculating the slope at various points $(x, y)$ and drawing small line segments with those slopes. The result is (from Wikipedia):
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{~/Dropbox/calculus/calcbc/bctest3_moreintegrals/slopefield.png}
+\end{figure}
+
+Euler's method is a technique used to approximate solutions to differential equations with a given initial value by using the slope of the function at a given point to estimate the value of the function at the next point.
+
+\example{Use a table and Euler's method to approximate the value of $y$ at $x=1$ for the differential equation $\displaystyle \frac{dy}{dx} = x + y$ with the initial condition $y(0) = 1$, using a step size of $h=0.5$. Use $\Delta y = \displaystyle \frac{dy}{dx} \cdot \Delta x$ to find the change in $y$ at each step.}
+
+\step{1}{Make a table with the initial condition and known values.}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $y$ & $\Delta x$ & $\frac{dy}{dx} = x + y$ & $\Delta y$ & $(x + \Delta x, y + \Delta y)$ \\
+\hline
+0 & 1 & 0.5 & - & - & $(0.5, y)$ \\
+0.5 & - & 0.5 & - & - & $(1, y)$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\step{2}{Calculate the slope $\displaystyle \frac{dy}{dx}$ at each point and use it to find $\Delta y$.}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $y$ & $\Delta x$ & $\frac{dy}{dx} = x + y$ & $\Delta y$ & $(x + \Delta x, y + \Delta y)$ \\
+\hline
+0 & 1 & 0.5 & 1 & 0.5 & $(0.5, 1.5)$ \\
+0.5 & 1.5 & 0.5 & 2 & 1 & $(1, 2.5)$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\example{Use tangent lines to do the same problem.}
+
+\step{1}{Find the equation of the tangent line at the initial point.}
+
+Given:
+
+\begin{gather*}
+\frac{dy}{dx} = x + y \\
+y(0) = 1 \\
+\Delta x = 0.5
+\end{gather*}
+
+Finding the tangent line:
+
+\begin{gather*}
+\frac{dy}{dx} = 0 + 1 = 1 \\
+y - 1 = 1(x - 0) \\
+y = x + 1
+\end{gather*}
+
+\step{2}{Use the tangent line to approximate $y$ at $x=0.5$.}
+
+At $x=0.5$, $y = 0.5 + 1 = 1.5$.
+
+\step{3}{Use the new point to find the next tangent line.}
+
+\begin{gather*}
+\frac{dy}{dx} = 1.5 + 0.5 = 2 \\
+y - 1.5 = 2(x-0.5) \\
+y = 2x + 0.5
+\end{gather*}
+
+\step{4}{Use the new tangent line to approximate $y$ at $x=1$.}
+
+At $x=1$, $y = 2(1) + 0.5 = \boxed{2.5}$.
+
+Both methods yield the same approximation of $y(1) \approx 2.5$.
+
+\subsection*{H21 Separable differential equations}
+
+A separable differential equation is one that can be expressed in the form $\frac{dy}{dx} = f(x)g(y)$, allowing the variables to be separated on opposite sides of the equation for integration.
+
+\example{Solve the separable differential equation $\displaystyle \frac{dy}{dx} = \frac{x}{y}$ with the initial condition $y(0) = 2$.}
+
+\step{1}{Separate the variables.}
+
+\begin{gather*}
+\frac{dy}{dx} = \frac{x}{y} \\
+y \: dy = x \: dx
+\end{gather*}
+
+\step{2}{Integrate both sides to find the general solution.}
+
+\begin{gather*}
+\int y \: dy = \int x \: dx \\
+\frac{1}{2} y^2 = \frac{1}{2} x^2 + C \\
+y^2 = x^2 + C \\
+\end{gather*}
+
+\step{3}{Use the initial condition to find the particular solution.}
+
+\begin{gather*}
+y^2 = x^2 + C\\
+y(0) = 2 \\
+2^2 = 0^2 + C \\
+C = 4 \\
+y = \pm \sqrt{x^2+4} \\
+2 = \pm \sqrt{0^2 + 4} \\
+2 = \sqrt{4} \\
+\boxed{y = \sqrt{x^2 + 4}}
+\end{gather*}
+
+\subsection*{H22 Logistic equations}
+
+A logistic equation is a type of differential equation that models population growth with a carrying capacity.
+
+Typically, the logistic equation is expressed as $$\frac{dP}{dt} = rP(M-P)$$
+
+where $P$ is the population size, $k = r \cdot M$ is the growth rate, and $M$ is the carrying capacity.
+
+Important things to note:
+\begin{itemize}
+\item The population grows fastest at $P = \displaystyle \frac{M}{2}$, or in the middle of the curve at the point of inflection.
+\item As $P$ approaches $M$, the growth rate slows down and the population stabilizes. The rate of change approaches zero as the population approaches its carrying capacity.
+\item If the equation is not in the standard form, it may need to be manipulated algebraically to identify $k$ and $M$.
+\end{itemize}
+
+The equation is alternatively expressed as $$\frac{dP}{dt} = kP\left(1 - \frac{P}{M}\right)$$
+
+where $k$ is the growth rate and $M$ is the carrying capacity.
+
+\subsection*{H23 (review of integrals, skipped)}
+
+\subsection*{H24 Integration by parts, solving for the integral, and tabular integration}
+
+\subsubsection*{Integration by parts}
+
+Integration by parts is a technique used to integrate products of functions following the formula\footnote{This formula can be memorized with the mnemonic device ``ultraviolet voodoo'', origin unknown :)}:
+
+$$\int u \: dv = uv - \int v \: du$$
+
+where $u$ and $dv$ are parts of the original integral.
+
+To identify $u$, use the initialism \textbf{LIATE}, which stands for \textbf{L}ogarithmic, \textbf{I}nverse trigonometric, \textbf{A}lgebraic, \textbf{T}rigonometric, and \textbf{E}xponential functions. The function that appears first in this list should be chosen as $u$.
+
+\example{Use integration by parts to evaluate the integral $\displaystyle \int x e^x \: dx$.}
+
+\step{1}{Identify $u$ and $dv$ with $du$ and $v$.}
+
+Let $u = x$ (algebraic) and $dv = e^x \: dx$. Thus, $du = dx$ and $v = e^x$.\footnote{While $u=x$ is not a valid choice for u-substitution since it does not simplify the integral, it does work well for integration by parts.}
+
+\step{2}{Follow the formula.}
+
+\begin{gather*}
+uv - \int v \: du \\
+= x e^x - \int e^x \: dx
+\end{gather*}
+
+\step{3}{Integrate.}
+
+\begin{gather*}
+x e^x - \int e^x \: dx \\ 
+= \boxed{x e^x - e^x + C} \\
+\end{gather*}
+
+\subsubsection*{Solving for the integral}
+
+Sometimes, applying integration by parts results in an equation that contains the original integral. In such cases, solve for the integral algebraically.
+
+Consider the following integral:
+
+$$\int e^x \cos x \: dx$$
+
+This integral looks solvable, but applying integration by parts twice will lead back to the original integral. To test this, let $u = e^x$ and $dv = \cos x \: dx$, and therefore $du = e^x \: dx$ and $v = \sin x$. Following the formula 
+
+$$ \int u \: dv = uv - \int v \: du $$
+
+yields:
+
+$$ \int e^x \cos x \: dx = e^x \sin x - \int e^x \sin x \: dx $$
+
+Now, apply integration by parts again to the remaining integral $\int e^x \sin x \: dx$. Let $u = e^x$ and $dv = \sin x \: dx$, so $du = e^x \: dx$ and $v = -\cos x$. Applying the formula again gives:
+
+$$ \int e^x \sin x \: dx = -e^x \cos x + \int e^x \cos x \: dx $$
+
+Substituting this back into the previous equation results in:
+
+$$ \int e^x \cos x \: dx = e^x \sin x - \left( -e^x \cos x + \int e^x \cos x \: dx \right) $$
+
+This simplifies to:
+
+$$ \int e^x \cos x \: dx = e^x \sin x + e^x \cos x - \int e^x \cos x \: dx $$
+
+Now, the original integral is on both sides of the equation. To solve for it, add $\int e^x \cos x \: dx$ to both sides:
+
+$$ 2 \int e^x \cos x \: dx = e^x (\sin x + \cos x) $$
+
+Finally, divide both sides by 2 to isolate the integral:
+
+$$ \int e^x \cos x \: dx = \boxed{\frac{e^x (\sin x + \cos x)}{2} + C} $$
+
+\subsubsection*{Tabular integration}
+
+Tabular integration is a method used to simplify the process of integration by parts when one function can be differentiated repeatedly until it becomes zero, and the other function can be integrated repeatedly.
+
+\example{Use tabular integration to evaluate the integral $\displaystyle \int x^3 e^x \: dx$.}
+
+\step{1}{Set up the table and differentiate $u$ until the left side reaches 0. Integrate $dv$ the same number of times.}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+$u$ & $dv$ \\
+\hline
+$x^3$ & $e^x$ \\
+$3x^2$ & $e^x$ \\
+$6x$ & $e^x$ \\
+$6$ & $e^x$ \\
+$0$ & $e^x$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\step{2}{Multiply diagonally, alternating signs, and sum the results.}
+
+\begin{gather*}
++ x^3 e^x \\
+- 3x^2 e^x \\
++ 6x e^x \\
+- 6 e^x \\
+\end{gather*}
+
+\step{3}{Write the final answer.}
+
+$$\int x^3 e^x \: dx = \boxed{e^x (x^3 - 3x^2 + 6x - 6) + C}$$
+
+\subsection*{H25 Partial fractions}
+
+Partial fraction decomposition is a technique used to break down a complex rational function into simpler fractions that are easier to integrate.
+
+For each fraction in the partial fraction decomposition, the numerator should always be \textbf{one degree more} than the denominator.
+
+\example{Evaluate $\displaystyle \int \frac{2x + 3}{(x-1)(x+2)} \: dx$.}
+
+\step{1}{Set up the decomposition. The denominator is always one degree more than the numerator.}
+
+\begin{gather*}
+\frac{2x + 3}{(x-1)(x+2)} = \frac{A}{x-1} + \frac{B}{x+2}
+\end{gather*}
+
+\step{2}{Multiply both sides by the denominator to eliminate the fractions.}
+
+\begin{gather*}
+2x+3 = A(x+2) + B(x-1) \\
+2x + 3 = Ax + 2A + Bx - B
+\end{gather*}
+
+\step{3}{Solve for $A$ and $B$.}
+
+\begin{gather*}
+A + B = 2 \\
+2A - B = 3 \\
+3A = 5 \\
+A = \frac{5}{3}
+B = \frac{1}{3}
+\end{gather*}
+
+\step{4}{Substitute and integrate.}
+
+\begin{gather*}
+\int \frac{2x + 3}{(x-1)(x+2)} \: dx = \int \frac{5/3}{x-1} + \frac{1/3}{x+2} \: dx \\
+= \boxed{\frac{5}{3} \ln|x-1| + \frac{1}{3} \ln|x+2| + C}
+\end{gather*}
+
+\subsection*{H26 Area between curves}
+
+The area between two curves can be found by integrating the difference between the two functions from the leftmost intersection point to the rightmost intersection point. For sideways curves, integrate from the bottommost intersection point to the topmost intersection point (as a function of y).
+
+\end{document}
