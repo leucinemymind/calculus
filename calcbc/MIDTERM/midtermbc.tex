@@ -924,4 +924,60 @@ B = \frac{1}{3}
 
 The area between two curves can be found by integrating the difference between the two functions from the leftmost intersection point to the rightmost intersection point. For sideways curves, integrate from the bottommost intersection point to the topmost intersection point (as a function of y).
 
+\subsection*{H27 Volumes}
+
+\subsubsection*{Disc method}
+The disc method is used to find the volume of a solid of revolution by dividing the solid into discs perpendicular to the axis of revolution. The volume of each disc is calculated and then integrated over the interval:
+
+$$ V = \pi \int_a^b [R(x)]^2 \: dx $$
+
+where $R(x)$ is the radius of the disc at position $x$.
+
+\example{Find the volume of the solid formed by revolving the region bounded by the curve $y = \sqrt{x}$ and $x = 4$ about the $x$-axis.}
+
+\step{1}{Draw the graph.}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{discmethod}
+\end{figure}
+
+\step{2}{Set up the integral using the disc method and solve.}
+
+In this case, the radius is the function, but the radius is not always the function.
+
+\begin{gather*}
+V = \pi \int_0^4 (\sqrt{x})^2 \: dx \\
+= \pi \int_0^4 x \: dx \\
+= \pi \cdot \left[\frac{1}{2}x^2\right]_0^4 \\
+= \boxed{8\pi}
+\end{gather*}
+
+\subsubsection*{Washer method}
+
+The washer method is an extension of the disc method used when the solid of revolution has a hole in the center. The volume is calculated by subtracting the volume of the inner disc from the outer disc:
+
+$$ V = \pi \int_a^b \left( [R(x)]^2 - [r(x)]^2 \right) \: dx $$
+
+where $R(x)$ is the outer radius and $r(x)$ is the inner radius at position $x$.
+
+\example{Find the volume of the solid formed by revolving the region bounded by the curves $y = \sqrt{x}$ and $x=4$ about the $y$-axis.}
+
+\step{1}{Draw the graph.}
+
+The graph is the same as the previous example, but this time the axis of rotation is the $y$-axis. The washer method is needed because the region does not touch the axis of rotation.
+
+\step{2}{Write the equations in terms of $y$.}
+
+$y = \sqrt{x}$, so $x = y^2$. The line $x = 4$ is 4 away from the $y$-axis, so the outer radius stays the same. 
+
+\step{3}{Set up the integral using the washer method and solve.}
+
+\begin{gather*}
+V = \pi \int_0^2 [(4^2 - (y^2)^2] \: dy \\
+= \pi \int_0^2 (16 - y^4) \: dy \\
+= \pi \cdot \left[16y - \frac{1}{5}y^5 \right]_0^2 \\
+= \boxed{\frac{128\pi}{5}}
+\end{gather*}
+
 \end{document}
