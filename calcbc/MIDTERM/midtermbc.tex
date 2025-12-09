@@ -980,4 +980,107 @@ V = \pi \int_0^2 [(4^2 - (y^2)^2] \: dy \\
 = \boxed{\frac{128\pi}{5}}
 \end{gather*}
 
+\subsection*{H28 Cross sections}
+
+The volume of a solid with known cross-sectional area can be found by integrating the area of the cross-sections over the interval:
+
+$$ V = \int_a^b A(x) \: dx $$
+
+where $A(x)$ is the area of the cross-section at position $x$ or
+
+$$ V = \int_c^d A(y) \: dy $$
+
+where $A(y)$ is the area of the cross-section at position $y$.
+
+\example{The region formed by the line $x+2y = 2$, the $x$-axis, and the $y$-axis is the base for a solid. The cross-sections \textbf{perpendicular to the $x$-axis} are \textbf{equilateral triangles}, with one side of the triangle in the $xy$ plane. What is the volume of the solid?}
+
+Because the base is perpendicular to the $x$-axis, integrate wrt $x$.
+
+\step{1}{Draw the graph.}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{crosssecs}
+\end{figure}
+
+\step{2}{Set up the equation for the area of one triangle.}
+
+The area of an equilateral triangle is given by $$A = \frac{\sqrt{3}}{4}s^2$$ where $s$ is the length of one side. The length of each side is the function itself, so the area of each cross-section is
+
+$$A = \frac{\sqrt{3}}{4} (2 - x)^2$$
+
+\step{3}{Set up the integral and solve.}
+
+\begin{gather*}
+V = \int_0^2 \frac{\sqrt{3}}{4} (2 - x)^2 \: dx \\
+= \frac{\sqrt{3}}{4} \int_0^2 (2 - x)^2 \: dx \\
+= \frac{\sqrt{3}}{4} \cdot \left[ \frac{(2 - x)^3}{-3} \right]_0^2 \\
+= \boxed{\frac{2\sqrt{3}}{3}}
+\end{gather*}
+
+\subsection*{H29 Improper integrals}
+
+An improper integral is an integral that has either an infinite limit of integration or an integrand that approaches infinity within the limits of integration.
+
+To evaluate an improper integral:
+
+\begin{enumerate}
+\item Identify the type of improper integral (infinite limit or infinite integrand).
+\item Rewrite the integral as a limit.
+\item Evaluate the limit.
+\end{enumerate}
+
+\example{Evaluate the integral $\displaystyle \int_{-\infty}^{0} \frac{1}{(x-2)^3} \: dx$. Determine whether it converges or diverges.}
+
+\step{1}{Rewrite the integral as a limit.}
+
+$$\lim_{b \to -\infty} \int_b^0 \frac{1}{(x-2)^3} \: dx$$
+
+\step{2}{Evaluate the limit and determine whether it diverges ($\infty$ or $-\infty$) or converges (number).}
+
+\begin{gather*}
+\lim_{b \to -\infty} \left[ \frac{1}{-2(x-2)^2} \right]_b^0 \\
+= \lim_{b \to -\infty} \left( -\frac{1}{8} + \frac{1}{2(b-2)^2} \right) \\
+= -\frac{1}{8} + 0 \\
+\boxed{\text{converges to} \: -\frac{1}{8}}
+\end{gather*}
+
+\example{Evaluate the integral $\displaystyle \int_{-\infty}^{\infty} e^{2x} \: dx$. Determine whether it converges or diverges.}
+
+\step{1}{Rewrite the integral as a limit.}
+$$\lim_{a \to -\infty} \int_a^0 e^{2x} \: dx + \lim_{b \to \infty} \int_0^b e^{2x} \: dx$$
+
+\step{2}{Evaluate the limit.}
+\begin{gather*}
+\lim_{a \to -\infty} \left[ \frac{1}{2} e^{2x} \right]_a^0 + \lim_{b \to \infty} \left[ \frac{1}{2} e^{2x} \right]_0^b \\
+= \lim_{a \to -\infty} \left( \frac{1}{2} - \frac{1}{2} e^{2a} \right) + \lim_{b \to \infty} \left( \frac{1}{2} e^{2b} - \frac{1}{2} \right) \\
+= \left( \frac{1}{2} - 0 \right) + \left( \infty - \frac{1}{2} \right) \\
+\boxed{\text{diverges}}
+\end{gather*}
+
+This limit diverges because $\displaystyle \lim_{b \to \infty} \frac{1}{2} e^{2b} = \infty$. If one of the terms is $\pm \infty$, then the entire limit diverges.
+
+\example{Evaluate the integral $\displaystyle \int_0^4 \frac{1}{\sqrt{4-r}} \: dr$. Determine whether it converges or diverges.}
+
+\step{1}{Rewrite the integral as a limit.}
+
+$$\lim_{b \to 4^-} \int_0^b \frac{1}{\sqrt{4-r}} \: dr$$
+
+The limit approaches 4 \textbf{from the left} because the interval approaches 4 from the left (0 to 4 as opposed to 4 to a certain number).
+
+\step{2}{Evaluate the limit.}
+
+\begin{gather*}
+\lim_{b \to 4^-} \left[ -2\sqrt{4-r} \right]_0^b \\
+= \lim_{b \to 4^-} \left( -2\sqrt{4-b} + 4 \right) \\
+= -2(0) + 4 \\
+\boxed{\text{converges to} \: 4}
+\end{gather*}
+
+\subsection*{H31 Arc length (H30 review, skipped)}
+
+The formula for the length of an arc is 
+
+$$ S = \int_a^b \sqrt{1+[f'(x)]^2} \: dx $$
+
 \end{document}
