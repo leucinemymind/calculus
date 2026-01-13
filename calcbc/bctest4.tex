@@ -1,0 +1,129 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{textcomp}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{gensymb}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{nicefrac}
+\hypersetup{
+    colorlinks=true,        % Enable colored links
+    linkcolor=teal,         % Set color for internal links
+    citecolor=teal,         % Set color for citations
+    filecolor=teal,         % Set color for file links
+    urlcolor=teal           % Set color for URLs
+}
+
+\DeclareMathOperator{\arcsec}{arcsec}
+
+\newcommand{\example}[1]{\textcolor{blue}{\textbf{Example:} #1}}
+\newcommand{\step}[2]{\textcolor{blue}{\textbf{Step #1:} #2}}
+
+\begin{document}
+
+\begin{center}
+\textbf{{\Large AP Calculus BC Test 4}}
+\end{center}
+
+\subsection*{H1 Sequences}
+
+A \textbf{sequence} is a list of elements.
+
+\begin{align*}
+2,4,6,8\dots \quad & a_n = 2n \quad \text{arithmetic sequence} \\
+1, \frac12, \frac14, \frac18, \frac{1}{16}\dots \quad & a_n = \frac{1}{2^{n-1}} \quad \text{geometric sequence}\\
+1, \frac12, \frac16, \frac{1}{24}, \frac{1}{120}\dots \quad & a_n = \frac{1}{n!}
+\end{align*}
+
+\subsection*{H2 Series and convergence}
+
+A \textbf{series} is the sum of the elements of a sequence.
+
+\subsubsection*{Vocabulary and formulas}
+
+\begin{align*}
+\text{\textbf{Infinite series:}} & \quad \sum_{n=1}^\infty a_n = a_1 + a_2 + a_3 + \dots \\ 
+\text{\textbf{Geometric series:}} & \quad \sum_{n=0}^\infty ar^n \\
+\text{\textbf{Sum of geometric series:}} & \quad S = \frac{a}{1-r} \quad \text{if } |r| < 1 \\
+\text{\textbf{Partial sum:}} & \quad S_n \\
+\text{\textbf{Sum of series:}} & \quad S \\
+\end{align*}
+
+\subsubsection*{Proving divergence with the $n$th-term test}
+
+\textcolor{red}{\textbf{If $\displaystyle \sum_{n=1}^\infty a_n$ \textit{converges}, then $\displaystyle \lim_{n \to \infty} a_n = 0.$}}
+
+\textcolor{red}{This is \textit{not} saying that if the limit of the terms in the sequence goes to 0, then the series converges. If the limit goes to 0, further tests are needed to determine convergence.}
+
+\textcolor{red}{\textbf{If $\displaystyle \lim_{n \to \infty} a_n \neq 0,$ then $\displaystyle \sum_{n=1}^\infty a_n$ \textit{diverges}.}}
+
+\example{Determine whether the series $\displaystyle \sum_{n=1}^\infty \frac{n^2 + 2}{n}$ converges or diverges.}
+
+Determine the limit:
+
+$$\lim_{n \to \infty} \frac{n^2 + 2}{n} = \infty$$
+
+because the degree of the numerator is greater than the degree of the denominator.
+
+Since the limit does not equal 0, the series \textbf{diverges} by the $n$th-term test.
+
+\subsubsection*{Proving convergence of geometric series}
+
+All that is needed to prove convergence of a geometric series is to show that the common ratio $r$ satisfies $|r| < 1$.
+
+\example{Determine whether the series $\displaystyle \sum_{n=0}^\infty \left(\frac{3}{4}\right)^n$ converges or diverges. If it converges, find the sum.}
+
+\step{1}{Find the common ratio and determine whether the series converges or diverges.}
+
+The common ratio is $r = \displaystyle \frac{3}{4}$. Since $|r| = \displaystyle \frac{3}{4} < 1$, the series \textbf{converges}.
+
+\step{2}{Find the sum.}
+
+\begin{gather*}
+S = \frac{a}{1-r} \\
+= \frac{1}{1 - \frac{3}{4}} \\
+= \frac{1}{\frac{1}{4}} \\
+= \boxed{\text{converges to 4}}
+\end{gather*}
+
+\subsubsection*{Telescoping series}
+
+A \textbf{telescoping series} is a series where many terms cancel out when writing the partial sums. \underline{These often involve partial fractions.}
+
+\example{Determine whether the series $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+1)}$ converges or diverges. If it converges, find the sum.}
+
+\step{1}{Separate using partial fractions.}
+
+\begin{gather*}
+\frac{1}{n(n+1)} = \frac{A}{n} + \frac{B}{n+1} \\
+A(n+1) + B(n) = 1 \\
+An + A + Bn = 1 \\
+A = 1 \\
+B = -1 \\
+\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1} \\
+\end{gather*}
+
+\step{2}{Write out the sequence.}
+
+$$\sum_{n = 1}^\infty \frac{1}{n} - \frac{1}{n+1} = 1-\frac12+\frac12-\frac13+\frac13-\frac14+\frac14 \dots - \frac{1}{n+1}$$
+
+\step{3}{Take the limit of the series.}
+
+\begin{gather*}
+S = 1 - \frac{1}{n+1} \\
+\lim_{n \to \infty} 1 - \frac{1}{n+1}\\
+= \boxed{\text{converges to 1}}
+\end{gather*}
+
+\end{document}
