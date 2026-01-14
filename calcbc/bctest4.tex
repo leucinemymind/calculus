@@ -60,7 +60,7 @@ A \textbf{series} is the sum of the elements of a sequence.
 \text{\textbf{Sum of series:}} & \quad S \\
 \end{align*}
 
-\subsubsection*{Proving divergence with the $n$th-term test}
+\subsubsection*{$n$th-term test}
 
 \textcolor{red}{\textbf{If $\displaystyle \sum_{n=1}^\infty a_n$ \textit{converges}, then $\displaystyle \lim_{n \to \infty} a_n = 0.$}}
 
@@ -78,7 +78,7 @@ because the degree of the numerator is greater than the degree of the denominato
 
 Since the limit does not equal 0, the series \textbf{diverges} by the $n$th-term test.
 
-\subsubsection*{Proving convergence of geometric series}
+\subsubsection*{Geometric series test}
 
 All that is needed to prove convergence of a geometric series is to show that the common ratio $r$ satisfies $|r| < 1$.
 
@@ -97,7 +97,7 @@ S = \frac{a}{1-r} \\
 = \boxed{\text{converges to 4}}
 \end{gather*}
 
-\subsubsection*{Telescoping series}
+\subsubsection*{Telescoping series test}
 
 A \textbf{telescoping series} is a series where many terms cancel out when writing the partial sums. \underline{These often involve partial fractions.}
 
@@ -125,5 +125,25 @@ S = 1 - \frac{1}{n+1} \\
 \lim_{n \to \infty} 1 - \frac{1}{n+1}\\
 = \boxed{\text{converges to 1}}
 \end{gather*}
+
+\subsection*{H3 Integral test and $p$-series}
+
+\subsubsection*{Integral test}
+
+If $f(x)$ is \textbf{positive, continuous, and decreasing} for $x \geq 1$ and $f(n) = a_n,$ then the series $\displaystyle \sum_{n=1}^\infty a_n$ and the integral $\displaystyle \int_1^\infty f(x) \, dx$ either both converge or both diverge.
+
+\subsubsection*{$p$-series}
+
+A \textbf{$p$-series} is a series of the form $\displaystyle \sum_{n=1}^\infty \frac{1}{n^p}$ where $p$ is a positive constant.
+
+If $p > 1,$ the series \textit{converges}. Otherwise, the series \textit{diverges}.
+
+A special case occurs at $p = 1,$ which is the harmonic series $\displaystyle \sum_{n=1}^\infty \frac{1}{n}$. This series \textit{diverges}.
+
+\subsection*{H4 Comparison tests}
+
+\subsubsection*{Direct comparison test}
+
+\subsubsection*{Limit comparison test}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  12 JAN 2026 19:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  13 JAN 2026 20:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -892,7 +892,9 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 [2]
 
-[3] (./bctest4.aux)
+[3]
+
+[4] (./bctest4.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -901,11 +903,11 @@ Package rerunfilecheck Info: File `bctest4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32610 strings out of 473190
- 757038 string characters out of 5715801
+ 32665 strings out of 473190
+ 757795 string characters out of 5715801
  1333387 words of memory out of 5000000
- 55308 multiletter control sequences out of 15000+600000
- 567649 words of font info for 89 fonts, out of 8000000 for 9000
+ 55329 multiletter control sequences out of 15000+600000
+ 570318 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,87p,1004b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
@@ -918,10 +920,10 @@ r/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
 ocal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
 l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on bctest4.pdf (3 pages, 109385 bytes).
+Output written on bctest4.pdf (4 pages, 114162 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 28685 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 93 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
+ 38925 words of extra memory for PDF output out of 42996 (max. 10000000)
 
