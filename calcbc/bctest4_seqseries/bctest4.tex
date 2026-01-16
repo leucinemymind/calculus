@@ -144,6 +144,64 @@ A special case occurs at $p = 1,$ which is the harmonic series $\displaystyle \s
 
 \subsubsection*{Direct comparison test}
 
+The direct comparison test involves comparing the given series to a known series.
+
+Given $a_n$ and $b_n$ are \textbf{positive terms} for all $n$:
+
+\textbf{If $\displaystyle \sum b_n$ \textit{converges} and $a_n \leq b_n$ for all $n,$ then $\displaystyle \sum a_n$ \textit{converges}.}
+
+\textbf{If $\displaystyle \sum a_n$ \textit{diverges} and $a_n \leq b_n$ for all $n,$ then $\displaystyle \sum b_n$ \textit{diverges}.}
+
+\example{Determine whether the series $\displaystyle \sum_{n=1}^\infty \frac{n^2+2}{n^4+5}$ converges or diverges.}
+
+\step{1}{Choose a series to compare to and set up the inequality.}
+
+$$\frac{n^2+2}{n^4+5} < \frac{n^2+2}{n^4}$$
+
+\step{2}{Simplify the inequality.}
+
+$$\frac{n^2+2}{n^4} = \frac{1}{n^2} + \frac{2}{n^4}$$
+
+\step{3}{Determine whether the comparison series converges or diverges.}
+
+Because both $\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$ and $\displaystyle \sum_{n=1}^\infty \frac{2}{n^4}$ are $p$-series with $p > 1,$ both series \textbf{converge.} Therefore, \fbox{by the direct comparison test, the original series \textbf{converges.}}
+
 \subsubsection*{Limit comparison test}
+
+\textbf{Given $a_n$ and $b_n$ are positive terms for all $n,$ and $\displaystyle \lim_{n \to \infty} \frac{a_n}{b_n} = c,$ where $c$ is a finite number and $c > 0,$ \textbf{then $\displaystyle \sum a_n$ and $\displaystyle \sum b_n$ either both converge or both diverge.}}
+
+\example{Determine whether the series $\displaystyle \sum_{n=0}^\infty \frac{1}{3^n-n}$ converges or diverges.}
+
+\subsection*{H5 Alternating series test}
+
+The \textbf{alternating series test} can be used on any alternating series of the form $\displaystyle \sum_{n=1}^\infty (-1)^{n-1} a_n$ or $\displaystyle \sum_{n=1}^\infty (-1)^n a_n,$ where $a_n > 0$ to test if it \textbf{converges.}
+
+\textbf{The series converges if both of the following conditions are met:}
+
+\begin{enumerate}[label=(\alph*)]
+    \item $\displaystyle a_{n+1} \leq a_n$ for all $n$ (the terms are decreasing)
+    \item $\displaystyle \lim_{n \to \infty} a_n = 0$
+    
+\end{enumerate}
+
+If either condition is not met, the test is \textbf{inconclusive.}
+
+\example{Determine if the series $\displaystyle \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}$ converges or diverges.}
+
+\step{1}{Check if the limit of the terms goes to 0.}
+
+Because the degree of the denominator is greater than the degree of the numerator,
+
+\begin{gather*}
+\lim_{n \to \infty} \frac{1}{n} = 0
+\end{gather*}
+
+\step{2}{Check if the terms decrease.}
+
+Because $\displaystyle \frac{1}{n+1} < \frac{1}{n}$ for all $n,$ the terms decrease.
+
+\step{3}{Conclude and justify.}
+
+\fbox{By the alternating series test, the series converges.}
 
 \end{document}
