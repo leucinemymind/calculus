@@ -225,4 +225,58 @@ Because $\displaystyle \frac{1}{n+1} < \frac{1}{n}$ for all $n,$ the terms decre
 
 \fbox{By the alternating series test, the series converges.}
 
+\subsubsection*{Alternating Series Remainder}
+
+The \textbf{remainder} $R_N$ is the absolute difference between the sum of the series $S$ and the $N$th partial sum $S_N$.
+
+From the textbook:
+
+``If a convergent alternating series satisfies the condition $a_{n+1} \leq a_n$, then the absolute value of the remainder $R_N$ involved in approximating the sum $S$ by $S_N$ is less than (or equal to) the first neglected term. That is,
+
+$$|S-S_N| = |R_N| \leq a_{N+1}.$$''
+
+In simpler terms, for a convergent alternating series that is decreasing, the error made by stopping at the $N$th term is less than or equal to the absolute value of the next term.
+
+For example, for the series $\displaystyle \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n},$ if we approximate the sum by stopping at the 4th term (which is $S_4$), the error, $|S-S_4|$, is less than or equal to $\displaystyle \frac{1}{5}$ (which is $a_5$).
+
+$$|S - S_4| \leq \frac{1}{5}$$
+
+\subsubsection*{Absolute and conditional convergence}
+
+A series $\displaystyle \sum_{n=1}^\infty a_n$ is said to be \textbf{absolutely convergent} if the series of absolute values $\displaystyle \sum_{n=1}^\infty |a_n|$ converges.
+
+If a series $\displaystyle \sum_{n=1}^\infty a_n$ converges but the series of absolute values $\displaystyle \sum_{n=1}^\infty |a_n|$ diverges, then the series is said to be \textbf{conditionally convergent}.
+
+\example{Determine if the series $\displaystyle \sum_{n=1}^\infty \frac{(-1)^{n+1}n^2}{(n+1)^2}$ is absolutely convergent, conditionally convergent, or divergent.}
+
+By the $n$th-term test, the series \fbox{diverges}.
+
+\newpage 
+
+\subsection*{Review of tests}
+
+\begin{table}[H]
+\begin{tabular}{|p{6em}|p{8em}|p{20em}|p{6em}|}
+\hline
+\textbf{Test} & \textbf{Conditions} & \textbf{Procedure} & \textbf{C or D?} \\
+\hline
+$n$th-term & none & Find $\displaystyle \lim_{n \to \infty} a_n.$ If the limit is 0, the series diverges.  & Divergence \\
+\hline
+geometric series & none & Find the common ratio $r.$ If $|r| < 1,$ converges. Otherwise, diverges. & Both \\
+\hline
+$p$-series & none & If $p > 1,$ converges. Otherwise, diverges. & Both \\
+\hline
+telescoping series & none & Cancel the middle terms and take the limit as $n$ goes to infinity of the first and last term. If the limit exists and is finite, the series converges. & Both \\
+\hline
+integral test & positive, continuous, and decreasing & Evaluate $ \int_1^\infty f(x) \, dx.$ If the integral converges, the series converges. Otherwise, it diverges. & Both \\
+\hline
+direct comparison & positive & Compare original series to a known series. Designate the smaller series as $a_n$ and the greater as $b_n$ ($a_n < b_n$). \textbf{If $a_n$ converges, the original series converges. If $b_n$ diverges, the original series diverges.} & Both \\
+\hline
+limit comparison & positive & Compare original series $a_n$ to a known series $b_n$. Find $\displaystyle \lim_{n \to \infty} \frac{a_n}{b_n} = c.$ If $c$ is finite and $c > 0,$ both series either converge or diverge. & Both \\
+\hline
+alternating series & positive, decreasing & Check that $\displaystyle \lim_{n \to \infty} a_n = 0$ to conclude the series converges & Convergence \\
+\hline
+\end{tabular}
+\end{table}
+
 \end{document}
