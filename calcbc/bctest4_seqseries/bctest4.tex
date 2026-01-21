@@ -247,9 +247,26 @@ A series $\displaystyle \sum_{n=1}^\infty a_n$ is said to be \textbf{absolutely 
 
 If a series $\displaystyle \sum_{n=1}^\infty a_n$ converges but the series of absolute values $\displaystyle \sum_{n=1}^\infty |a_n|$ diverges, then the series is said to be \textbf{conditionally convergent}.
 
-\example{Determine if the series $\displaystyle \sum_{n=1}^\infty \frac{(-1)^{n+1}n^2}{(n+1)^2}$ is absolutely convergent, conditionally convergent, or divergent.}
+\subsection*{H7 Ratio and root tests}
 
-By the $n$th-term test, the series \fbox{diverges}.
+\subsubsection*{Ratio test}
+Given a series $\displaystyle \sum_{n=1}^\infty a_n,$ let
+$$L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|.$$
+\begin{itemize}
+    \item If $L < 1,$ the series \textbf{converges absolutely.}
+    \item If $L > 1,$ the series \textbf{diverges.}
+    \item If $L = 1,$ the test is \textbf{inconclusive.}
+\end{itemize}
+
+\subsubsection*{Root test}
+
+Given a series $\displaystyle \sum_{n=1}^\infty a_n,$ let
+$$L = \lim_{n \to \infty} \sqrt[n]{|a_n|}.$$
+\begin{itemize}
+    \item If $L < 1,$ the series \textbf{converges absolutely.}
+    \item If $L > 1,$ the series \textbf{diverges.}
+    \item If $L = 1,$ the test is \textbf{inconclusive.}
+\end{itemize}
 
 \newpage 
 
@@ -275,6 +292,10 @@ direct comparison & positive & Compare original series to a known series. Design
 limit comparison & positive & Compare original series $a_n$ to a known series $b_n$. Find $\displaystyle \lim_{n \to \infty} \frac{a_n}{b_n} = c.$ If $c$ is finite and $c > 0,$ both series either converge or diverge. & Both \\
 \hline
 alternating series & positive, decreasing & Check that $\displaystyle \lim_{n \to \infty} a_n = 0$ to conclude the series converges & Convergence \\
+\hline
+ratio & none & Find $\displaystyle \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = L.$ If $L < 1,$ converges. If $L > 1,$ diverges. If $L = 1,$ inconclusive. & Both \\
+\hline
+root & none & Find $\displaystyle \lim_{n \to \infty} \sqrt[n]{|a_n|} = L.$ If $L < 1,$ converges. If $L > 1,$ diverges. If $L = 1,$ inconclusive. & Both \\
 \hline
 \end{tabular}
 \end{table}
