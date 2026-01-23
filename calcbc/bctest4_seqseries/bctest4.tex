@@ -300,4 +300,37 @@ root & none & Find $\displaystyle \lim_{n \to \infty} \sqrt[n]{|a_n|} = L.$ If $
 \end{tabular}
 \end{table}
 
+\newpage
+
+\subsection*{Taylor polynomials}
+
+The Taylor series of a function $f(x)$ centered at $x = a$ is given by:
+
+$$f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \dots$$
+
+An $n$th-degree Taylor polynomial is given by:
+
+$$P_n(x) = a_0 + a_1(x-a) + \frac{a_2}{2!}(x-a)^2 + \frac{a_3}{3!}(x-a)^3 + \dots + \frac{a_n}{n!}(x-a)^n$$
+
+where
+
+Similar to linearization, this series approximates the function $f(x)$ near the point $x = a$ with a polynomial function. 
+
+\example{Find the 5th-order (5 derivatives) Taylor polynomial for $f(x) = e^{1-x}$ centered at $x = 0$.}
+
+\step{1}{Find the derivatives of $f(x)$ and evaluate them at $x = 0$.}
+
+\begin{gather*}
+f(0) = e \\
+f'(0) = -e \\
+f''(0) = e \\
+f'''(0) = -e \\
+f^{(4)}(0) = e \\
+f^{(5)}(0) = -e \\
+\end{gather*}
+
+\step{2}{Substitute into the Taylor polynomial formula.}
+
+$$P_5(x) = e - ex + \frac{e}{2!} x^2 - \frac{e}{3!} x^3 + \frac{e}{4!} x^4 - \frac{e}{5!} x^5$$
+
 \end{document}
