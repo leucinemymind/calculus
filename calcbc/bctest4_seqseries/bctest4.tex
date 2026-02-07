@@ -241,6 +241,25 @@ For example, for the series $\displaystyle \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n
 
 $$|S - S_4| \leq \frac{1}{5}$$
 
+\example{Use the alternating series error bound to find an upper and lower bound for the sum of the series $\displaystyle \sum_{n=1}^{\infty} (-1)^n \frac{3}{3n^\frac{1}{3}+5}$ by approximating with the first four terms.}
+
+\step{1}{Find the fourth partial sum $S_4$.}
+
+$$S_4 = -0.048$$
+
+\step{2}{Find the next term $a_5$.}
+
+$$a_5 = \frac{3}{3(5)^{\frac{1}{3}} + 5} \approx 0.296$$
+
+\step{3}{Find the upper and lower bounds. Lower bound = $S_4 - a_5$, upper bound = $S_4 + a_5$.}
+
+\begin{gather*}
+\text{Lower bound} = -0.048 - 0.296 = -0.344 \\
+\text{Upper bound} = -0.048 + 0.296 = 0.248
+\end{gather*}
+
+$$\boxed{-0.344 \leq S \leq 0.248}$$
+
 \subsubsection*{Absolute and conditional convergence}
 
 A series $\displaystyle \sum_{n=1}^\infty a_n$ is said to be \textbf{absolutely convergent} if the series of absolute values $\displaystyle \sum_{n=1}^\infty |a_n|$ converges.
@@ -277,7 +296,7 @@ $$L = \lim_{n \to \infty} \sqrt[n]{|a_n|}.$$
 \hline
 \textbf{Test} & \textbf{Conditions} & \textbf{Procedure} & \textbf{C or D?} \\
 \hline
-$n$th-term & none & Find $\displaystyle \lim_{n \to \infty} a_n.$ If the limit is 0, the series diverges.  & Divergence \\
+$n$th-term & none & Find $\displaystyle \lim_{n \to \infty} a_n.$ If the limit is \textbf{not} 0, the series diverges.  & Divergence \\
 \hline
 geometric series & none & Find the common ratio $r.$ If $|r| < 1,$ converges. Otherwise, diverges. & Both \\
 \hline
@@ -332,5 +351,223 @@ f^{(5)}(0) = -e \\
 \step{2}{Substitute into the Taylor polynomial formula.}
 
 $$P_5(x) = e - ex + \frac{e}{2!} x^2 - \frac{e}{3!} x^3 + \frac{e}{4!} x^4 - \frac{e}{5!} x^5$$
+
+\subsection*{H10 Lagrange error bound}
+
+The \textbf{Lagrange error bound} gives an upper bound for the error when approximating a function $f(x)$ using its Taylor polynomial $P_n(x)$:
+
+$$|R_n(x)| \leq \frac{M}{(n+1)!} |x-a|^{n+1}$$
+
+where:
+
+\begin{itemize}
+    \item $R_n(x)$ is the remainder (error) after approximating $f(x)$ with the $n$th-degree Taylor polynomial $P_n(x)$.
+    \item $M$ is the \textbf{absolute value} of the \textbf{greatest value} of $|f^{(n+1)}(z)|$ for some $z$ \textbf{between the centre and the $x$-value of the function} that is being approximated.
+    \item $n$ is the degree of the Taylor polynomial.
+    \item $a$ is the center of the Taylor series.
+    \item $x$ is the point at which the function is approximated.
+\end{itemize}
+
+\example{Find an upper bound for the error when approximating $f(x) = \ln(x)$ using a 3rd-degree Taylor polynomial centered at $x = 1$ to approximate $f(1.5)$.}
+
+\step{1}{Find the 4th derivative of $f(x)$.}
+
+\begin{gather*}
+f(x) = \ln(x) \\
+f'(x) = \frac{1}{x} \\
+f''(x) = -\frac{1}{x^2} \\
+f'''(x) = \frac{2}{x^3} \\
+f^{(4)}(x) = -\frac{6}{x^4} \\
+\end{gather*}
+
+\step{2}{ Find $M$.}
+
+The maximum absolute value of the derivative between $x = 1$ and $x = 1.5$ is at $x = 1$:
+
+$$M = \left| f^{(4)}(1) \right| = 6$$
+
+\step{3}{Substitute into the Lagrange error bound formula.}
+
+\begin{gather*}
+|R_3(1.5)| \leq \frac{6}{4!} |1.5 - 1|^4 \\
+= \frac{6}{24} (0.5)^4 \\
+= \boxed{0.003125}
+\end{gather*}
+
+\subsection*{H11 Power series}
+
+The power series is a series of the form:
+
+$$\sum_{n=0}^\infty a_n (x-c)^n = a_0 + a_1 (x-c) + a_2 (x-c)^2 + a_3 (x-c)^3 + \dots$$
+
+where $a_n$ represents the coefficients of the series, $c$ is the center of the series, and $x$ is the variable.
+
+\subsubsection*{Convergence of power series}
+
+\textbf{Three cases:}
+
+\begin{enumerate}
+\item series converges only at $c$
+\item series converges absolutely for all $x$
+\item series converges for $|x-c| < R$ and diverges for $|x-c| > R$ (where $R$ is the radius of convergence); \textbf{interval of convergence} is the value of $x$ for which the series converges
+\end{enumerate}
+
+To find the radius and interval of convergence, use the \textbf{ratio test} or the \textbf{root test.}
+
+\textbf{Important!}
+
+\begin{enumerate}
+\item \textbf{Check endpoints} to be sure whether the constraints should be strict or include endpoints. (for example, $-1 < x < 1$ or $-1 \leq x < 1$)
+\item The radius of convergence is \textbf{the center minus the endpoint} and is always non-negative. (for example, if the interval of convergence is $-2 < x < 4,$ the center is 1 and the radius is 3)
+\end{enumerate}
+
+\example{Find the center of the power series $\displaystyle \sum_{n=0}^\infty \frac{x^n}{n \sqrt{n} \cdot 3^n}$, the radius of convergence, and the interval of convergence.}
+
+\step{1}{Find the center.}
+
+The series is in the form $\displaystyle \sum_{n=0}^\infty a_n (x-c)^n.$ So, $\boxed{c = 0}.$
+
+\step{2}{Use the ratio test to find the radius of convergence.}
+
+\begin{gather*}
+L = \lim_{n \to \infty} \left| \frac{x^{n+1}}{(n+1) \sqrt{n+1} \cdot 3^{n+1}} \cdot \frac{n \sqrt{n} \cdot 3^n}{x^n} \right| \\
+= \lim_{n \to \infty} \left| \frac{x}{3} \cdot \frac{n \sqrt{n}}{(n+1) \sqrt{n+1}} \right| \\
+= \left| \frac{x}{3} \right| \lim_{n \to \infty} \frac{n}{n+1} \cdot \lim_{n \to \infty} \frac{\sqrt{n}}{\sqrt{n+1}} \\
+= \frac{x}{3}
+\end{gather*}
+
+For convergence, $L < 1$:
+
+\begin{gather*}
+\left| \frac{x}{3} \right| < 1 \\
+|x| < 3
+\end{gather*}
+
+So, the radius of convergence is \boxed{R = 3}.
+
+\step{3}{Find the interval of convergence.}
+
+\begin{gather*}
+-1 < \frac{x}{3} < 1 \\
+\boxed{-3 < x < 3}
+\end{gather*}
+
+\textbf{For any power series, the interval of convergence is the same for its derivative and its integral. However, the endpoints may differ.}
+
+\example{Find the interval of convergence of $\displaystyle \sum_{n=0}^\infty \frac{(-1)^{n+1}(x-1)^{n+1}}{n+1}$, of its derivative, and its integral.}
+
+\step{1}{Identify the center and interval of convergence of the original function.}
+
+The center is $c = 1$, as 1 is subtracted from $x$.
+
+Because this is a geometric series with common ratio $r = x-1$, the interval of convergence is:
+
+\begin{gather*}
+|x-1| < 1 \\
+-1 < x-1 < 1 \\
+\boxed{0 < x < 2}
+\end{gather*}
+
+\step{2}{Take the derivative.}
+
+Treating $n$ (and $(-1)^{n+1}$)as a constant, take the derivative with respect to $x$ by using the power rule:
+
+$$ \frac{d}{dx} \displaystyle \sum_{n=0}^\infty \frac{(-1)^{n+1}(x-1)^{n+1}}{n+1} = \displaystyle \sum_{n=0}^\infty (-1)^{n+1}(x-1)^n$$
+
+\step{3}{Test the endpoints of the derivative.}
+
+For $x=0$:
+
+$$\displaystyle \sum_{n=0}^\infty (-1)^{n+1}(-1)^n$$
+
+This series \textbf{diverges} because the limit of the terms does not go to 0 ($n$th-term test).
+
+For $x=2$:
+
+$$\displaystyle \sum_{n=0}^\infty (-1)^{n+1}(1)^n$$
+
+This series \textbf{diverges} because the limit of the terms does not go to 0 ($n$th-term test).
+
+$\boxed{ 0 < x < 2}$
+
+\step{4}{Take the integral of the original function.}
+
+$$\int \displaystyle \sum_{n=0}^\infty \frac{(-1)^{n+1}(x-1)^{n+1}}{n+1} \, dx = \displaystyle \sum_{n=0}^\infty \frac{(-1)^{n+1}(x-1)^{n+2}}{(n+1)(n+2)} + C$$
+
+\step{5}{Test the endpoints of the integral.}
+
+For $x=0$:
+
+$$\displaystyle \sum_{n=0}^\infty \frac{(-1)^{n+1}(-1)^{n+2}}{(n+1)(n+2)} + C$$
+
+This series \textbf{converges} by the alternating series test.
+
+For $x=2$:
+
+$$\displaystyle \sum_{n=0}^\infty \frac{(-1)^{n+1}(1)^{n+2}}{(n+1)(n+2)} + C$$
+
+This series \textbf{converges} by the alternating series test.
+
+$$\boxed{ 0 \leq x \leq 2}$$
+
+\subsection*{H12 Representing functions as power series}
+
+To represent a function as a power series, recall the equation
+
+$$S = \frac{a}{1-r}$$
+
+Using this function, identify $a$ and $r$, and then substitute into the formula to find the power series representation of the function.
+
+\example{Find a power series representation for $\displaystyle g(x) = \frac{4x}{x^2+2x-3}$ and find the interval of convergence.}
+
+\step{1}{Factor the denominator.} By applying partial fractions, we can rewrite the function as:
+
+\begin{gather*}
+4x = \frac{A}{x+3} + \frac{B}{x-1} \\
+A(x-1) + B(x+3) = 4x \\
+Ax - A + Bx + 3B = 4x \\
+A + B = 4 \\
+- A + 3B = 0 \\
+A = 3 \\
+B = 1 \\
+g(x) = \frac{3}{x+3} + \frac{1}{x-1}
+\end{gather*}
+
+\step{2}{Identify $a$ and $r$ for each term.}
+
+For $\displaystyle \frac{3}{x+3}$:
+
+$$\frac{3}{x+3} = \frac{3/3}{x/3+3/3} = \frac{1}{1+x/3}$$
+
+$a$ is 1 and $r$ is $-x/3$.
+
+For $\displaystyle \frac{1}{x-1}$:
+
+$$\frac{1}{x-1} = \frac{-1}{1-x}$$
+
+$a$ is $-1$ and $r$ is $x$.
+
+\step{3}{Substitute into the formula $S = \frac{a}{1-r}$ to find the power series representation.}
+
+$$\boxed{\sum_{n=0}^{\infty} \left(\frac{-x}{3}\right)^n - \sum_{n=0}^{\infty} x^n}$$
+
+\step{4}{Find the interval of convergence.}
+
+For $\displaystyle \frac{3}{x+3}$:
+
+\begin{gather*}
+\left| \frac{-x}{3} \right| < 1 \\
+|x| < 3 \\
+-3 < x < 3
+\end{gather*}
+
+For $\displaystyle \frac{1}{x-1}$:
+
+\begin{gather*}
+|x| < 1 \\
+-1 < x < 1
+\end{gather*}
+
+The interval of convergence is the intersection of the two intervals, which is \boxed{-1 < x < 1}.
 
 \end{document}
