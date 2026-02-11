@@ -570,4 +570,42 @@ For $\displaystyle \frac{1}{x-1}$:
 
 The interval of convergence is the intersection of the two intervals, which is \boxed{-1 < x < 1}.
 
+\subsection*{H13 Taylor and Maclaurin series}
+
+The three series to memorize are:
+
+$$e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots$$
+$$\sin x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \dots$$
+$$\cos x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \dots$$
+
+\example{Find the Maclaurin series for $\displaystyle \int (e^{-t/2}-1) dt$.}
+
+\step{1}{Use the Maclaurin series for $e^x$ to find the Maclaurin series for $e^{-t/2}$.}
+
+$$e^{-t/2} = \sum_{n=0}^\infty \frac{(-t/2)^n}{n!} = \sum_{n=0}^\infty \frac{(-1)^n}{n!} t^{2n}$$
+
+\step{2}{Subtract 1 from the series.}
+
+Because the first term of the series is 1, to subtract 1, start the series at $n=1$ instead of $n=0$:
+
+$$e^{-t/2} - 1 = \sum_{n=1}^\infty \frac{(-1)^n}{n!} t^{2n}$$
+
+\step{3}{Substitute the integrand for the series.}
+
+$$\int (e^{-t/2}-1) dt = \int \sum_{n=1}^\infty \frac{(-1)^n}{n!} t^{2n} dt$$
+
+\step{4}{Integrate the series.}
+
+Because $\displaystyle \frac{(-1)^n}{n!}$ is a constant, it gets pulled out of the integral. The rest of the integral becomes
+
+$$\int t^{2n} dt = \frac{t^{2n+1}}{2n+1} + C$$
+
+Evaluated from 0 to $x$, the integral becomes
+
+$$\frac{x^{2n+1}}{2n+1}$$
+
+\step{5}{Substitute the integrated series back into the summation.}
+
+$$\boxed{\sum_{n=1}^\infty \frac{(-1)^n}{n!} \cdot \frac{x^{2n+1}}{2n+1}}$$
+
 \end{document}
