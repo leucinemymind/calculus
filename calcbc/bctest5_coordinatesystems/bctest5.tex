@@ -1,0 +1,116 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{textcomp}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{gensymb}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{nicefrac}
+\hypersetup{
+    colorlinks=true,        % Enable colored links
+    linkcolor=teal,         % Set color for internal links
+    citecolor=teal,         % Set color for citations
+    filecolor=teal,         % Set color for file links
+    urlcolor=teal           % Set color for URLs
+}
+
+\DeclareMathOperator{\arcsec}{arcsec}
+
+\newcommand{\example}[1]{\textcolor{blue}{\textbf{Example:} #1}}
+\newcommand{\step}[2]{\textcolor{blue}{\textbf{Step #1:} #2}}
+
+\begin{document}
+
+\begin{center}
+\textbf{{\Large AP Calculus BC Test 4}}
+\end{center}
+
+\subsection*{H23 Parametric equations}
+
+A parametric equation is a pair of equations that define a curve in the plane. The equations are typically written in the form $x = f(t)$ and $y = g(t)$, where $t$ is a \textbf{parameter} that varies over some interval.
+
+The curve defined by the parametric equations can be traced out by varying the parameter $t$ from its starting value to its ending value, \underline{drawing arrows} to indicate directionality.
+
+\subsubsection*{Eliminating the parameter}
+To eliminate the parameter, solve one of the equations for $t$ and then substitute that expression into the other equation.
+
+\example{Given the parametric equations $x = 2t + 1$ and $y = t^2 - 3$, eliminate the parameter to find an equation in terms of $x$ and $y$.}
+
+\begin{gather*}
+x = 2t + 1 \\
+t = \frac{x - 1}{2} \\
+y = t^2 - 3 \\
+y = \left(\frac{x - 1}{2}\right)^2 - 3 \\
+\boxed{y = \frac{(x - 1)^2}{4} - 3}
+\end{gather*}
+
+For trigonometric functions, use a Pythagorean identity.
+
+\example{Given the parametric equations $x = 4\cos(t)$ and $y = 4\sin(t)$, eliminate the parameter to find an equation in terms of $x$ and $y$. Determine the shape of the curve.}
+
+\begin{gather*}
+x = 4\cos(t) \\
+y = 4\sin(t) \\
+\end{gather*}
+
+Using the Pythagorean identity $\sin^2(t) + \cos^2(t) = 1$:
+
+\begin{gather*}
+\left(\frac{x}{4}\right)^2 + \left(\frac{y}{4}\right)^2 = 1 \\
+\boxed{\frac{x^2}{16} + \frac{y^2}{16} = 1}
+\end{gather*}
+
+The curve is a \fbox{circle}.
+
+\subsubsection*{Tangent lines}
+
+$$\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}}$$
+$$\frac{d^2y}{dx^2} = \frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}}$$
+
+\example{Find the slope of the tangent line to the curve and the concavity of the curve defined by the parametric equations $x = 4cos(t)$ and $y = 4sin(t)$ at the point where $t = \frac{\pi}{4}$.}
+
+\step{1}{Find the first derivative and plug in the value of $t$ to get the slope.}
+
+\begin{gather*}
+\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} \\
+= \frac{4\cos(t)}{-4\sin(t)} \\
+= -\cot(t) \\
+-\cot(t)|_{t = \frac{\pi}{4}} = -1 \\
+\boxed{m = 1}
+\end{gather*}
+
+\step{2}{Find the second derivative and plug in the value of $t$ to get the concavity.}
+
+Since we know $\frac{dy}{dx} = -\cot(t)$, differentiate and divide by $\frac{dx}{dt}$ to find the second derivative:
+
+\begin{gather*}
+\frac{d^2y}{dx^2} = \frac{\frac{d}{dt}\left(-\cot(t)\right)}{\frac{dx}{dt}} \\
+= \frac{\csc^2(t)}{-4\sin(t)} \\
+-\frac{\csc^2(t)}{4\sin(t)}|_{t = \frac{\pi}{4}} = -\frac{\sqrt{2}}{2} \\
+\boxed{\text{concave down}}
+\end{gather*}
+
+\subsubsection*{Horizontal and vertical tangents}
+
+If $\frac{dy}{dt} = 0$ and $\frac{dx}{dt} \neq 0$, then there is a \textbf{horizontal tangent}.
+
+If $\frac{dx}{dt} = 0$ and $\frac{dy}{dt} \neq 0$, then there is a \textbf{vertical tangent}.
+
+\subsubsection*{Arc length formula}
+
+For parametric equations $x = f(t)$ and $y = g(t)$, the arc length from $t = a$ to $t = b$ is given by the formula:
+
+$$L = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} dt$$
+
+\end{document}
