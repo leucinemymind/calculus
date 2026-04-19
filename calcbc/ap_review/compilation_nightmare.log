@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  9 APR 2026 10:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 APR 2026 14:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -965,23 +965,23 @@ g>]
 [30]
 
 [31]
-Underfull \hbox (badness 1286) in paragraph at lines 1195--1195
+
+[32]
+Underfull \hbox (badness 1286) in paragraph at lines 1219--1219
 []\OT1/cmr/m/n/12 (+20) positive, con-tin-u-
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 1201--1201
+Underfull \hbox (badness 1742) in paragraph at lines 1225--1225
 []\OT1/cmr/m/n/12 (+20) positive, de-creas-
  []
 
 
-Overfull \hbox (48.2401pt too wide) in paragraph at lines 1183--1208
+Overfull \hbox (48.2401pt too wide) in paragraph at lines 1207--1232
 [][] 
  []
 
 
-
-[32]
 
 [33]
 
@@ -1004,41 +1004,43 @@ Overfull \hbox (48.2401pt too wide) in paragraph at lines 1183--1208
 [42]
 
 [43]
-<~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal.png, id=319, 320.196
+
+[44]
+<~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal.png, id=325, 320.196
 24pt x 206.7725pt>
 File: ~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal.png Graphic fil
 e (type png)
 <use ~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal.png>
 Package pdftex.def Info: ~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/pe
-tal.png  used on input line 1646.
+tal.png  used on input line 1670.
 (pdftex.def)             Requested size: 234.8775pt x 151.6778pt.
 
 
-[44 </Users/ZhangYu/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal.png
+[45 </Users/ZhangYu/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal.png
 >]
-<~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal2.png, id=328, 648.42
+<~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal2.png, id=334, 648.42
 25pt x 525.965pt>
 File: ~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal2.png Graphic fi
 le (type png)
 <use ~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal2.png>
 Package pdftex.def Info: ~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/pe
-tal2.png  used on input line 1665.
+tal2.png  used on input line 1689.
 (pdftex.def)             Requested size: 234.8775pt x 190.51898pt.
 <~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/loop_throwingmeforaloop.pn
-g, id=329, 273.02pt x 244.915pt>
+g, id=335, 273.02pt x 244.915pt>
 File: ~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/loop_throwingmeforalo
 op.png Graphic file (type png)
 <use ~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/loop_throwingmeforaloo
 p.png>
 Package pdftex.def Info: ~/Dropbox/calculus/calcbc/bctest5_coordinatesystems/lo
-op_throwingmeforaloop.png  used on input line 1687.
+op_throwingmeforaloop.png  used on input line 1711.
 (pdftex.def)             Requested size: 234.8775pt x 210.70125pt.
 
 
-[45 </Users/ZhangYu/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal2.pn
+[46 </Users/ZhangYu/Dropbox/calculus/calcbc/bctest5_coordinatesystems/petal2.pn
 g>]
 
-[46 </Users/ZhangYu/Dropbox/calculus/calcbc/bctest5_coordinatesystems/loop_thro
+[47 </Users/ZhangYu/Dropbox/calculus/calcbc/bctest5_coordinatesystems/loop_thro
 wingmeforaloop.png>] (./compilation_nightmare.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
@@ -1048,11 +1050,11 @@ Package rerunfilecheck Info: File `compilation_nightmare.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32973 strings out of 473190
- 762958 string characters out of 5715801
+ 32974 strings out of 473190
+ 762969 string characters out of 5715801
  1333415 words of memory out of 5000000
  55387 multiletter control sequences out of 15000+600000
- 573811 words of font info for 165 fonts, out of 8000000 for 9000
+ 573752 words of font info for 164 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,16n,87p,1022b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
@@ -1072,10 +1074,10 @@ e/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/202
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025
 /texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on compilation_nightmare.pdf (46 pages, 2489630 bytes).
+Output written on compilation_nightmare.pdf (47 pages, 2491139 bytes).
 PDF statistics:
- 448 PDF objects out of 1000 (max. 8388607)
- 354 compressed objects within 4 object streams
- 155 named destinations out of 1000 (max. 500000)
+ 455 PDF objects out of 1000 (max. 8388607)
+ 360 compressed objects within 4 object streams
+ 158 named destinations out of 1000 (max. 500000)
  43041 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -75,7 +75,7 @@ f(5.1) \approx -10(5.1) + 30 \\
 = \boxed{-21}
 \end{gather*}
 
-\subsection*{H2 Limits and continuity}
+\subsection*{Limits and continuity}
 
 The \textbf{limit} of a function is the y-value the graph approaches. Limit values are not affected by holes, random points, or sharp turns. However, there are some conditions for a limit to exist:
 
@@ -132,7 +132,7 @@ Check with \href{https://www.desmos.com/calculator}{Desmos}.
 
 \paragraph{Indeterminate forms} Use L'Hopital's rule and find the derivative of the top over the derivative of the bottom (separately, not with quotient rule). DO NOT WRITE ``$f(x) = \frac{0}{0}$''!!!! (``$\frac{0}{0}$ indeterminate form'' is fine.)
 
-\subsection*{H3 Non-traditional limits}
+\subsection*{Non-traditional limits}
 
 To find non-traditional limits, apply one of the following:
 
@@ -143,11 +143,11 @@ To find non-traditional limits, apply one of the following:
 \item If the limit is a composition and the inner function does not merely approach a value but rather stays consistently at that value, then evaluate the outer function at the value of the limit of the inner function.
 \end{itemize}
 
-\subsection*{H4 Differentiation}
+\subsection*{Differentiation}
 
 Refer to \href{https://www.mathsisfun.com/calculus/derivatives-rules.html}{derivative rules} for a full list.
 
-\subsection*{H5 Graphs of derivatives and derivatives of inverse (trig) functions}
+\subsection*{Graphs of derivatives and derivatives of inverse (trig) functions}
 
 The point $(a, b)$ is on $f(x)$, and $(b, a)$ is on $f^{-1}(x)$, its inverse. The derivative of the inverse function is given by:
 
@@ -163,7 +163,7 @@ In other words, the derivative of the inverse at the y-value of a function equal
 
 \href{https://english.mathe-online.at/tests/diff1/ablerkennen.html}{The big derivative puzzle}
 
-\subsection*{H6 Position, acceleration, velocity}
+\subsection*{Position, acceleration, velocity}
 
 \textbf{Velocity} is the first derivative of \textbf{position} (position is the integral of velocity) \\
 \textbf{Acceleration} is the first derivative of velocity (velocity is the integral of acceleration) \\
@@ -171,7 +171,7 @@ Acceleration is the second derivative of position \\
 
 \textbf{Distance} vs \textbf{displacement}: Distance is the total length traveled, while displacement is the change in position (final position - initial position). To calculate total distance, find the critical points of the velocity function, then evaluate the position function at those points and add the absolute values of the differences.
 
-\subsection*{H7 Implicit differentiation}
+\subsection*{Implicit differentiation}
 
 \example{Find $\frac{dy}{dx}$ if $x^2+xy+y^2 = 7$.}
 
@@ -189,7 +189,7 @@ x \frac{dy}{dx} + 2y \frac{dy}{dx} = -2x - y \\
 \boxed{\frac{dy}{dx} = \frac{-2x - y}{x + 2y}}
 \end{gather*}
 
-\subsection*{H8 Related rates}
+\subsection*{Related rates}
 
 \example{A 15-foot ladder leans against a vertical wall. The bottom is sliding away from the wall at a rate of 2 ft s$^{-1}$. Let $\theta$ be the angle between the ground and the ladder. At what rate is $\theta$ changing when the bottom of the ladder is 9 feet from the wall?}
 
@@ -218,7 +218,7 @@ x \frac{dy}{dx} + 2y \frac{dy}{dx} = -2x - y \\
 \frac{d\theta}{dt} = \frac{-1}{15 \cdot \frac{4}{5}} \cdot 2 \\ = \boxed{\frac{-1}{6} \text{ rad/s}}
 \end{gather*}
 
-\subsection*{H9 Extrema and concavity}
+\subsection*{Extrema and concavity}
 
 \textbf{Critical points} occur when $f'(x) = 0$ or $f'(x)$ is undefined. To find critical points, find the derivative, set it equal to zero, and solve.
 
@@ -920,9 +920,33 @@ B = \frac{1}{3}
 = \boxed{\frac{5}{3} \ln|x-1| + \frac{1}{3} \ln|x+2| + C}
 \end{gather*}
 
-\subsection*{Area between curves}
+\subsection*{Area between curves + 3D solids of revolution}
 
 The area between two curves can be found by integrating the difference between the two functions from the leftmost intersection point to the rightmost intersection point. For sideways curves, integrate from the bottommost intersection point to the topmost intersection point (as a function of y).
+
+\subsubsection*{Disc method}
+
+The disc method is used to find the volume of a solid of revolution when 1) the cross-sections perpendicular to the axis of revolution are circles and 2) the curve is bounded by the axis of revolution. The formula for the volume is given by:
+
+$$V = \pi \int_{a}^{b} R(x) \: dx$$
+
+where $R$ is the outer radius and $r$ is the smaller radius. An alternative is 
+
+$$V = \pi \int_{a}^{b} R(y) \: dy$$
+
+if the axis of revolution is vertical.
+
+\subsubsection*{Washer method}
+
+The washer method is used to find the volume of a solid of revolution when 1) the cross-sections perpendicular to the axis of revolution are circles with holes in the middle and 2) the curve is not bounded by the axis of revolution. The formula for the volume is given by:
+
+$$V = \pi \int_{a}^{b} \left[ (R(x))^2 - (r(x))^2 \right] \: dx$$
+
+where $R$ is the outer radius and $r$ is the smaller radius. An alternative is 
+
+$$V = \pi \int_{a}^{b} \left[ (R(y))^2 - (r(y))^2 \right] \: dy$$
+
+if the axis of revolution is vertical.
 
 \subsection*{Sequences}
 
@@ -934,7 +958,7 @@ A \textbf{sequence} is a list of elements.
 1, \frac12, \frac16, \frac{1}{24}, \frac{1}{120}\dots \quad & a_n = \frac{1}{n!}
 \end{align*}
 
-\subsection*{H2 Series and convergence}
+\subsection*{Series and convergence}
 
 A \textbf{series} is the sum of the elements of a sequence.
 
@@ -1014,7 +1038,7 @@ S = 1 - \frac{1}{n+1} \\
 = \boxed{\text{converges to 1}}
 \end{gather*}
 
-\subsection*{H3 Integral test and $p$-series}
+\subsection*{Integral test and $p$-series}
 
 \subsubsection*{Integral test}
 
@@ -1028,7 +1052,7 @@ If $p > 1,$ the series \textit{converges}. Otherwise, the series \textit{diverge
 
 A special case occurs at $p = 1,$ which is the harmonic series $\displaystyle \sum_{n=1}^\infty \frac{1}{n}$. This series \textit{diverges}.
 
-\subsection*{H4 Comparison tests}
+\subsection*{Comparison tests}
 
 \subsubsection*{Direct comparison test}
 
@@ -1081,7 +1105,7 @@ $$\frac{1}{3^n} = \left(\frac{1}{3}\right)^n$$
 
 Because the common ratio $r$ of the geometric series is $\frac13$ ($|r| < 1$), the series \textbf{converges.} Therefore, \fbox{by the limit comparison test, the original series \textbf{converges.}}
 
-\subsection*{H5 Alternating series test}
+\subsection*{Alternating series test}
 
 The \textbf{alternating series test} can be used on any alternating series of the form $\displaystyle \sum_{n=1}^\infty (-1)^{n-1} a_n$ or $\displaystyle \sum_{n=1}^\infty (-1)^n a_n,$ where $a_n > 0$ to test if it \textbf{converges.}
 
@@ -1154,7 +1178,7 @@ A series $\displaystyle \sum_{n=1}^\infty a_n$ is said to be \textbf{absolutely 
 
 If a series $\displaystyle \sum_{n=1}^\infty a_n$ converges but the series of absolute values $\displaystyle \sum_{n=1}^\infty |a_n|$ diverges, then the series is said to be \textbf{conditionally convergent}.
 
-\subsection*{H7 Ratio and root tests}
+\subsection*{Ratio and root tests}
 
 \subsubsection*{Ratio test}
 Given a series $\displaystyle \sum_{n=1}^\infty a_n,$ let
@@ -1192,7 +1216,7 @@ $p$-series & none & If $p > 1,$ converges. Otherwise, diverges. & Both \\
 \hline
 telescoping series & none & Cancel the middle terms and take the limit as $n$ goes to infinity of the first and last term. If the limit exists and is finite, the series converges. & Both \\
 \hline
-integral test & positive, continuous, and decreasing & Evaluate $ \int_1^\infty f(x) \, dx.$ If the integral converges, the series converges. Otherwise, it diverges. & Both \\
+integral test & positive, continuous, and decreasing & Evaluate $ \int_a^\infty f(x) \, dx.$ If the integral converges, the series converges. Otherwise, it diverges. & Both \\
 \hline
 direct comparison & positive & Compare original series to a known series. Designate the smaller series as $a_n$ and the greater as $b_n$ ($a_n < b_n$). \textbf{If $a_n$ converges, the original series converges. If $b_n$ diverges, the original series diverges.} & Both \\
 \hline
